@@ -1,0 +1,243 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base reset ───────────────────────────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #0d0d0d;
+  color: #ffffff;
+  min-height: 100svh;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+button {
+  font: inherit;
+}
+
+html.is-spatial {
+  background-color: transparent;
+  --xr-background-material: transparent;
+
+  body {
+    background-color: transparent;
+  }
+}
+
+.dashboard-root {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  min-height: 100svh;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.dashboard-panel,
+.detail-panel,
+.history-page-root {
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(10, 10, 10, 0.94);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.28);
+}
+
+.dashboard-panel {
+  flex: 1 1 560px;
+  min-width: 320px;
+  max-width: 780px;
+  padding: 2rem;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.dashboard-header h1 {
+  font-size: clamp(2rem, 2.5vw, 3rem);
+  margin: 0;
+}
+
+.dashboard-subtitle {
+  margin: 0.75rem 0 0;
+  color: #cbd5e1;
+  max-width: 42rem;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.category-button {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: #e2e8f0;
+  padding: 0.85rem 1.25rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.18s ease, background-color 0.18s ease;
+}
+
+.category-button:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.category-button.selected {
+  background: rgba(66, 153, 225, 0.18);
+  border-color: rgba(66, 153, 225, 0.45);
+  color: #ffffff;
+}
+
+.damage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 1rem;
+}
+
+.dot-card {
+  border: none;
+  border-radius: 24px;
+  min-height: 120px;
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.dot-card:hover,
+.dot-card.selected {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 32px rgba(0, 0, 0, 0.24);
+}
+
+.detail-panel {
+  flex: 0 0 360px;
+  min-width: 320px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.detail-panel h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.detail-row {
+  display: flex;
+  gap: 0.5rem;
+  color: #cbd5e1;
+}
+
+.detail-text,
+.history-body {
+  color: #e2e8f0;
+  line-height: 1.75;
+}
+
+.history-page-root {
+  padding: 2rem;
+  min-width: 320px;
+  max-width: 560px;
+}
+
+.history-header {
+  margin-bottom: 1.5rem;
+}
+
+.history-header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+.history-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.history-note {
+  color: #a0aec0;
+}
+
+@media (max-width: 900px) {
+  .dashboard-root {
+    padding: 1.5rem;
+  }
+
+  .dashboard-panel,
+  .detail-panel,
+  .history-page-root {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.history-empty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.9rem;
+}
+
+.history-feed {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-right: 4px;
+}
+
+.history-card {
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.history-card-time {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-variant-numeric: tabular-nums;
+}
+
+.history-card-text {
+  font-size: 0.95rem;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ── XR HistoryPage layout ───────────────────────────────────────────────── */
+
+.history-page-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  padding: 1.5rem;
+  gap: 1rem;
+  background: transparent;
+}
