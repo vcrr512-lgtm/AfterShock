@@ -10,9 +10,9 @@
  */
 
 import buildingsData from "./data/buildings_scored.json";
+import type { SpatializedElement } from "@webspatial/core-sdk";
 import { useEffect, useMemo, useState } from "react";
-import { initScene } from "@webspatial/react-sdk";
-import { isXRMode } from "./xrMode";
+import { SpatializedContainer } from "@webspatial/react-sdk";
 
 const HISTORY_WINDOW_NAME = "damage-detail";
 
@@ -71,73 +71,105 @@ export default function VoicePage() {
 
   return (
     <div className="dashboard-root">
-      <section className="dashboard-panel">
-        <div className="dashboard-header">
-          <div>
-            <h1>Damage Dashboard</h1>
-            <p className="dashboard-subtitle">Building damage overview for WebSpatial.</p>
+      <header className="dashboard-header">
+        <div>
+          <h1>Damage Dashboard</h1>
+          <p className="dashboard-subtitle">Building damage overview for WebSpatial.</p>
+        </div>
+      </header>
+
+      <div className="dashboard-panel-grid">
+        <SpatializedContainer
+          component="section"
+          spatializedContent="div"
+          createSpatializedElement={() => Promise.resolve({} as SpatializedElement)}
+          data-spatial-id="toggle-panel"
+          className="dashboard-panel toggle-panel"
+        >
+          <div className="panel-heading">
+            <h2>Dispatch Mode</h2>
+            <p>Switch between Medical and Machinery priorities.</p>
           </div>
-        </div>
 
-        <div className="button-row">
-          {CATEGORIES.map((category) => (
-            <button
-              key={category.key}
-              type="button"
-              className={`category-button${activeCategory === category.key ? " selected" : ""}`}
-              onClick={() => setActiveCategory(category.key)}
-            >
-              {category.label}
-            </button>
-          ))}
-        </div>
-
-        <div className="damage-grid">
-          {sortedBuildings.map((building) => {
-            const score = building[activeScoreKey];
-            const isTop = score === topScore;
-            const isSelected = selectedId === building.id;
-            return (
+          <div className="button-row">
+            {CATEGORIES.map((category) => (
               <button
-                key={building.id}
+                key={category.key}
                 type="button"
-                className={`dot-card${isSelected ? " selected" : ""}${isTop ? " top-ranked" : ""}`}
-                style={{
-                  backgroundColor: damageColor(building.damage),
-                  borderColor: isTop ? "#facc15" : "transparent",
-                }}
-                onClick={() => setSelectedId(building.id)}
+                className={`category-button${activeCategory === category.key ? " selected" : ""}`}
+                onClick={() => setActiveCategory(category.key)}
               >
-                <div className="dot-card-label">ID {building.id}</div>
-                <div className="dot-card-damage">{building.damage}</div>
-                <div className="dot-card-score">{`Score ${score}`}</div>
+                {category.label}
               </button>
-            );
-          })}
-        </div>
-      </section>
+            ))}
+          </div>
+        </SpatializedContainer>
 
-      <aside className="detail-panel">
-        <h2>Selected Building Details</h2>
-        {selectedBuilding ? (
-          <>
-            <div className="detail-row">
-              <strong>ID:</strong> {selectedBuilding.id}
-            </div>
-            <div className="detail-row">
-              <strong>Damage grade:</strong> {selectedBuilding.damage}
-            </div>
-            <div className="detail-row">
-              <strong>{activeCategory} score:</strong> {selectedBuilding[activeScoreKey]}
-            </div>
-            <div className="detail-row">
-              <strong>Lat / Lon:</strong> {selectedBuilding.lat.toFixed(6)}, {selectedBuilding.lon.toFixed(6)}
-            </div>
-          </>
-        ) : (
-          <p className="detail-text">Select a building to view its actual score and damage grade.</p>
-        )}
-      </aside>
+        <SpatializedContainer
+          component="section"
+          spatializedContent="div"
+          createSpatializedElement={() => Promise.resolve({} as SpatializedElement)}
+          data-spatial-id="building-grid-panel"
+          className="dashboard-panel buildings-panel"
+        >
+          <div className="panel-heading">
+            <h2>Building Priorities</h2>
+            <p>{sortedBuildings.length} scored buildings • {activeCategory} focus</p>
+          </div>
+
+          <div className="damage-grid">
+            {sortedBuildings.map((building) => {
+              const score = building[activeScoreKey];
+              const isTop = score === topScore;
+              const isSelected = selectedId === building.id;
+              return (
+                <button
+                  key={building.id}
+                  type="button"
+                  className={`dot-card${isSelected ? " selected" : ""}${isTop ? " top-ranked" : ""}`}
+                  style={{
+                    backgroundColor: damageColor(building.damage),
+                    borderColor: isTop ? "#facc15" : "transparent",
+                  }}
+                  onClick={() => setSelectedId(building.id)}
+                >
+                  <div className="dot-card-label">ID {building.id}</div>
+                  <div className="dot-card-damage">{building.damage}</div>
+                  <div className="dot-card-score">{`Score ${score}`}</div>
+                </button>
+              );
+            })}
+          </div>
+        </SpatializedContainer>
+
+        <SpatializedContainer
+          component="aside"
+          spatializedContent="div"
+          createSpatializedElement={() => Promise.resolve({} as SpatializedElement)}
+          data-spatial-id="detail-panel"
+          className="detail-panel"
+        >
+          <h2>Selected Building Details</h2>
+          {selectedBuilding ? (
+            <>
+              <div className="detail-row">
+                <strong>ID:</strong> {selectedBuilding.id}
+              </div>
+              <div className="detail-row">
+                <strong>Damage grade:</strong> {selectedBuilding.damage}
+              </div>
+              <div className="detail-row">
+                <strong>{activeCategory} score:</strong> {selectedBuilding[activeScoreKey]}
+              </div>
+              <div className="detail-row">
+                <strong>Lat / Lon:</strong> {selectedBuilding.lat.toFixed(6)}, {selectedBuilding.lon.toFixed(6)}
+              </div>
+            </>
+          ) : (
+            <p className="detail-text">Select a building to view its actual score and damage grade.</p>
+          )}
+        </SpatializedContainer>
+      </div>
     </div>
   );
 }
