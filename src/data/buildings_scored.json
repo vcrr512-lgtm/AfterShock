@@ -1,0 +1,1330 @@
+[
+  {
+    "id": 0,
+    "lat": 10.584247934899329,
+    "lon": -67.08355866523489,
+    "damage": "Possibly damaged",
+    "medical_score": 1,
+    "machinery_score": 1
+  },
+  {
+    "id": 1,
+    "lat": 10.587472589104168,
+    "lon": -67.0790124706875,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 2,
+    "lat": 10.588731670884956,
+    "lon": -67.050669150295,
+    "damage": "Possibly damaged",
+    "medical_score": 1,
+    "machinery_score": 1
+  },
+  {
+    "id": 3,
+    "lat": 10.599042389029126,
+    "lon": -67.04044211873786,
+    "damage": "Possibly damaged",
+    "medical_score": 1,
+    "machinery_score": 1
+  },
+  {
+    "id": 4,
+    "lat": 10.601503312142857,
+    "lon": -67.03246361000001,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 5,
+    "lat": 10.6017854115,
+    "lon": -67.03119532849999,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 8
+  },
+  {
+    "id": 6,
+    "lat": 10.601827606698762,
+    "lon": -67.03598448273728,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 7,
+    "lat": 10.602195192222222,
+    "lon": -67.03000936444444,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 8
+  },
+  {
+    "id": 8,
+    "lat": 10.602834119999999,
+    "lon": -67.03037675636364,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 10
+  },
+  {
+    "id": 9,
+    "lat": 10.602875056086956,
+    "lon": -67.02951927652174,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 12
+  },
+  {
+    "id": 10,
+    "lat": 10.598378506879795,
+    "lon": -67.01998838335038,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 11,
+    "lat": 10.600438087142857,
+    "lon": -67.02516804428572,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 12,
+    "lat": 10.601902925777777,
+    "lon": -67.02666569533334,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 6
+  },
+  {
+    "id": 13,
+    "lat": 10.602052206000002,
+    "lon": -67.0244288472,
+    "damage": "Possibly damaged",
+    "medical_score": 1,
+    "machinery_score": 1
+  },
+  {
+    "id": 14,
+    "lat": 10.602755995714286,
+    "lon": -67.02592061,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 6
+  },
+  {
+    "id": 15,
+    "lat": 10.603186214896551,
+    "lon": -67.02274030149425,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 16,
+    "lat": 10.602867767777777,
+    "lon": -67.02664012333334,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 8
+  },
+  {
+    "id": 17,
+    "lat": 10.60337987375,
+    "lon": -67.02775086,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 8
+  },
+  {
+    "id": 18,
+    "lat": 10.60436128986619,
+    "lon": -67.0203681198751,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 19,
+    "lat": 10.606215724090909,
+    "lon": -67.02149627704546,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 6
+  },
+  {
+    "id": 20,
+    "lat": 10.603611574,
+    "lon": -67.030110646,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 14
+  },
+  {
+    "id": 21,
+    "lat": 10.603547211538462,
+    "lon": -67.03168801115385,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 22,
+    "lat": 10.603602189375,
+    "lon": -67.028634656875,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 10
+  },
+  {
+    "id": 23,
+    "lat": 10.603853184090909,
+    "lon": -67.03388306727273,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 24,
+    "lat": 10.60388637888889,
+    "lon": -67.02896722888889,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 14
+  },
+  {
+    "id": 25,
+    "lat": 10.604057585,
+    "lon": -67.030784653,
+    "damage": "Possibly damaged",
+    "medical_score": 1,
+    "machinery_score": 8
+  },
+  {
+    "id": 26,
+    "lat": 10.604379974,
+    "lon": -67.029458654,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 12
+  },
+  {
+    "id": 27,
+    "lat": 10.604420357837837,
+    "lon": -67.0309509154054,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 12
+  },
+  {
+    "id": 28,
+    "lat": 10.604860253636362,
+    "lon": -67.0299002909091,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 12
+  },
+  {
+    "id": 29,
+    "lat": 10.605207649999999,
+    "lon": -67.03048237833333,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 10
+  },
+  {
+    "id": 30,
+    "lat": 10.605311422777778,
+    "lon": -67.03599266944444,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 31,
+    "lat": 10.605147495,
+    "lon": -67.03213728749999,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 6
+  },
+  {
+    "id": 32,
+    "lat": 10.60525947732612,
+    "lon": -67.0348830284235,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 33,
+    "lat": 10.60493100952941,
+    "lon": -67.03313448211765,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 6
+  },
+  {
+    "id": 34,
+    "lat": 10.605618074285715,
+    "lon": -67.03103998142856,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 8
+  },
+  {
+    "id": 35,
+    "lat": 10.605793346363637,
+    "lon": -67.03009590454545,
+    "damage": "Possibly damaged",
+    "medical_score": 1,
+    "machinery_score": 4
+  },
+  {
+    "id": 36,
+    "lat": 10.605771187419354,
+    "lon": -67.02861496232258,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 37,
+    "lat": 10.607970675,
+    "lon": -67.032364653125,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 38,
+    "lat": 10.608039345008404,
+    "lon": -67.03443701038655,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 39,
+    "lat": 10.608333004545456,
+    "lon": -67.03000628545455,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 6
+  },
+  {
+    "id": 40,
+    "lat": 10.606247440675675,
+    "lon": -67.02343160202703,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 41,
+    "lat": 10.606061881666667,
+    "lon": -67.025545583,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 42,
+    "lat": 10.606425188170732,
+    "lon": -67.02112542914634,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 8
+  },
+  {
+    "id": 43,
+    "lat": 10.607088725735295,
+    "lon": -67.02160794764706,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 8
+  },
+  {
+    "id": 44,
+    "lat": 10.607200258,
+    "lon": -67.019009784,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 45,
+    "lat": 10.606941460322581,
+    "lon": -67.01691168709677,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 6
+  },
+  {
+    "id": 46,
+    "lat": 10.607283748305084,
+    "lon": -67.02010646177966,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 6
+  },
+  {
+    "id": 47,
+    "lat": 10.6071411545,
+    "lon": -67.01585228675,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 48,
+    "lat": 10.608148381111112,
+    "lon": -67.0187448811111,
+    "damage": "Possibly damaged",
+    "medical_score": 1,
+    "machinery_score": 5
+  },
+  {
+    "id": 49,
+    "lat": 10.607922084615383,
+    "lon": -67.01762891153847,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 6
+  },
+  {
+    "id": 50,
+    "lat": 10.607347715,
+    "lon": -67.01462223,
+    "damage": "Possibly damaged",
+    "medical_score": 1,
+    "machinery_score": 3
+  },
+  {
+    "id": 51,
+    "lat": 10.60778112117647,
+    "lon": -67.01396881,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 52,
+    "lat": 10.608039860704364,
+    "lon": -67.00800280220237,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 53,
+    "lat": 10.60819859611111,
+    "lon": -67.00163105149572,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 54,
+    "lat": 10.608498952545455,
+    "lon": -67.00091241954546,
+    "damage": "Possibly damaged",
+    "medical_score": 1,
+    "machinery_score": 2
+  },
+  {
+    "id": 55,
+    "lat": 10.608368029045938,
+    "lon": -66.9986873646643,
+    "damage": "Possibly damaged",
+    "medical_score": 1,
+    "machinery_score": 1
+  },
+  {
+    "id": 56,
+    "lat": 10.609065894814815,
+    "lon": -67.01411440407408,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 10
+  },
+  {
+    "id": 57,
+    "lat": 10.609040322750001,
+    "lon": -67.013041838,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 6
+  },
+  {
+    "id": 58,
+    "lat": 10.608760358333333,
+    "lon": -67.01158199333334,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 6
+  },
+  {
+    "id": 59,
+    "lat": 10.609012874,
+    "lon": -67.010352078,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 8
+  },
+  {
+    "id": 60,
+    "lat": 10.608196335802468,
+    "lon": -67.02287456234568,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 61,
+    "lat": 10.608552014930876,
+    "lon": -67.02577978308756,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 6
+  },
+  {
+    "id": 62,
+    "lat": 10.608157678495576,
+    "lon": -67.0235399399115,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 6
+  },
+  {
+    "id": 63,
+    "lat": 10.608322817906977,
+    "lon": -67.02475446565892,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 6
+  },
+  {
+    "id": 64,
+    "lat": 10.608328463934425,
+    "lon": -67.02125024032787,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 65,
+    "lat": 10.608502778703507,
+    "lon": -67.02704386155155,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 6
+  },
+  {
+    "id": 66,
+    "lat": 10.60871135611111,
+    "lon": -67.02009235777777,
+    "damage": "Possibly damaged",
+    "medical_score": 1,
+    "machinery_score": 3
+  },
+  {
+    "id": 67,
+    "lat": 10.608800512727273,
+    "lon": -67.01913274,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 68,
+    "lat": 10.608890552857144,
+    "lon": -67.01760054571429,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 6
+  },
+  {
+    "id": 69,
+    "lat": 10.60879685142857,
+    "lon": -67.01596222857142,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 70,
+    "lat": 10.608585757142858,
+    "lon": -67.02935383857142,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 6
+  },
+  {
+    "id": 71,
+    "lat": 10.608804539285714,
+    "lon": -67.03126915,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 72,
+    "lat": 10.608923061818182,
+    "lon": -67.0286722890909,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 6
+  },
+  {
+    "id": 73,
+    "lat": 10.609351997142856,
+    "lon": -67.02810981428571,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 6
+  },
+  {
+    "id": 74,
+    "lat": 10.610800195112107,
+    "lon": -67.0144296540583,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 6
+  },
+  {
+    "id": 75,
+    "lat": 10.610827765652173,
+    "lon": -67.01019844836956,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 6
+  },
+  {
+    "id": 76,
+    "lat": 10.611108491934065,
+    "lon": -66.99137693567033,
+    "damage": "Possibly damaged",
+    "medical_score": 1,
+    "machinery_score": 1
+  },
+  {
+    "id": 77,
+    "lat": 10.610975777777778,
+    "lon": -67.00617450611111,
+    "damage": "Possibly damaged",
+    "medical_score": 1,
+    "machinery_score": 2
+  },
+  {
+    "id": 78,
+    "lat": 10.60985382368421,
+    "lon": -67.01733644578947,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 79,
+    "lat": 10.610860842897884,
+    "lon": -67.02103362942042,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 80,
+    "lat": 10.61309085233146,
+    "lon": -67.02221540393259,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 81,
+    "lat": 10.61308084115727,
+    "lon": -67.01833572097924,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 82,
+    "lat": 10.597848763149846,
+    "lon": -66.92961641173292,
+    "damage": "Possibly damaged",
+    "medical_score": 1,
+    "machinery_score": 1
+  },
+  {
+    "id": 83,
+    "lat": 10.600272263983051,
+    "lon": -66.93431937101694,
+    "damage": "Possibly damaged",
+    "medical_score": 1,
+    "machinery_score": 2
+  },
+  {
+    "id": 84,
+    "lat": 10.60033706573913,
+    "lon": -66.93484122430435,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 85,
+    "lat": 10.602066998257577,
+    "lon": -66.91408852594697,
+    "damage": "Possibly damaged",
+    "medical_score": 1,
+    "machinery_score": 1
+  },
+  {
+    "id": 86,
+    "lat": 10.601712313333334,
+    "lon": -66.9332701838889,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 87,
+    "lat": 10.602145673773585,
+    "lon": -66.93436195754717,
+    "damage": "Possibly damaged",
+    "medical_score": 1,
+    "machinery_score": 2
+  },
+  {
+    "id": 88,
+    "lat": 10.602201359551282,
+    "lon": -66.9320921798077,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 89,
+    "lat": 10.603163559,
+    "lon": -66.9221401887143,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 90,
+    "lat": 10.604746885,
+    "lon": -66.9012405575,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 91,
+    "lat": 10.606454372631578,
+    "lon": -66.97882112438239,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 92,
+    "lat": 10.604727436470588,
+    "lon": -66.89588671529411,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 93,
+    "lat": 10.6049670925,
+    "lon": -66.8973675125,
+    "damage": "Destroyed",
+    "medical_score": 3,
+    "machinery_score": 6
+  },
+  {
+    "id": 94,
+    "lat": 10.605046571666668,
+    "lon": -66.89867328666666,
+    "damage": "Destroyed",
+    "medical_score": 3,
+    "machinery_score": 9
+  },
+  {
+    "id": 95,
+    "lat": 10.60537589,
+    "lon": -66.89959835027027,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 96,
+    "lat": 10.605660386190475,
+    "lon": -66.89566414333333,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 97,
+    "lat": 10.605978172330827,
+    "lon": -66.89171304300751,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 98,
+    "lat": 10.607149818108107,
+    "lon": -66.89196641351352,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 99,
+    "lat": 10.608573427770493,
+    "lon": -66.8517720160164,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 100,
+    "lat": 10.609668543977273,
+    "lon": -66.88812140087121,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 101,
+    "lat": 10.610235046644952,
+    "lon": -66.87171342775244,
+    "damage": "Possibly damaged",
+    "medical_score": 1,
+    "machinery_score": 1
+  },
+  {
+    "id": 102,
+    "lat": 10.607220437532895,
+    "lon": -66.84336408355263,
+    "damage": "Possibly damaged",
+    "medical_score": 1,
+    "machinery_score": 1
+  },
+  {
+    "id": 103,
+    "lat": 10.609762825,
+    "lon": -66.840295549375,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 104,
+    "lat": 10.610177193350786,
+    "lon": -66.83669971769633,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 105,
+    "lat": 10.610366280847458,
+    "lon": -66.8243563998305,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 106,
+    "lat": 10.61021905902439,
+    "lon": -66.82772126195123,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 107,
+    "lat": 10.61093628,
+    "lon": -66.84658064333334,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 108,
+    "lat": 10.611196907708333,
+    "lon": -66.83687010145833,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 109,
+    "lat": 10.6114516978125,
+    "lon": -66.83963670468749,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 110,
+    "lat": 10.61137259894737,
+    "lon": -66.83207921263158,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 111,
+    "lat": 10.61238737873606,
+    "lon": -66.8272925567658,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 112,
+    "lat": 10.609863663999999,
+    "lon": -67.009877484,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 8
+  },
+  {
+    "id": 113,
+    "lat": 10.609863492222223,
+    "lon": -67.0159401011111,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 114,
+    "lat": 10.609585159523808,
+    "lon": -67.01360289380952,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 10
+  },
+  {
+    "id": 115,
+    "lat": 10.609666013809525,
+    "lon": -67.01441043095238,
+    "damage": "Destroyed",
+    "medical_score": 3,
+    "machinery_score": 12
+  },
+  {
+    "id": 116,
+    "lat": 10.609638426557378,
+    "lon": -67.01139310032787,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 8
+  },
+  {
+    "id": 117,
+    "lat": 10.60974750582569,
+    "lon": -66.98619988211009,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 118,
+    "lat": 10.610199397661537,
+    "lon": -67.0061719804,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 119,
+    "lat": 10.610505655166666,
+    "lon": -67.009151284,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 6
+  },
+  {
+    "id": 120,
+    "lat": 10.61067700617647,
+    "lon": -67.01328281735293,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 6
+  },
+  {
+    "id": 121,
+    "lat": 10.610665791818182,
+    "lon": -67.01167495,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 122,
+    "lat": 10.611131018333333,
+    "lon": -66.82205069,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 123,
+    "lat": 10.61156053709091,
+    "lon": -66.82944574727273,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 124,
+    "lat": 10.612323683636363,
+    "lon": -66.82729378636363,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 125,
+    "lat": 10.611600084538559,
+    "lon": -66.82008250418458,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 126,
+    "lat": 10.612266756744186,
+    "lon": -66.84482426534883,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 127,
+    "lat": 10.612217372857142,
+    "lon": -66.8341799631746,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 128,
+    "lat": 10.61217474090909,
+    "lon": -66.82466006727273,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 129,
+    "lat": 10.61302710708,
+    "lon": -66.83939433798001,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 130,
+    "lat": 10.6131557316,
+    "lon": -66.8377313408,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 131,
+    "lat": 10.613161233173077,
+    "lon": -66.83640864298077,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 132,
+    "lat": 10.6114613581203,
+    "lon": -66.88505397142856,
+    "damage": "Destroyed",
+    "medical_score": 3,
+    "machinery_score": 3
+  },
+  {
+    "id": 133,
+    "lat": 10.611916883529412,
+    "lon": -66.84988489,
+    "damage": "Possibly damaged",
+    "medical_score": 1,
+    "machinery_score": 1
+  },
+  {
+    "id": 134,
+    "lat": 10.612393212222221,
+    "lon": -66.84900915074074,
+    "damage": "Possibly damaged",
+    "medical_score": 1,
+    "machinery_score": 1
+  },
+  {
+    "id": 135,
+    "lat": 10.614003256153847,
+    "lon": -66.86077633,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 136,
+    "lat": 10.615076481764707,
+    "lon": -66.85850257294118,
+    "damage": "Possibly damaged",
+    "medical_score": 1,
+    "machinery_score": 2
+  },
+  {
+    "id": 137,
+    "lat": 10.615557373,
+    "lon": -66.85767796,
+    "damage": "Possibly damaged",
+    "medical_score": 1,
+    "machinery_score": 2
+  },
+  {
+    "id": 138,
+    "lat": 10.61589862202381,
+    "lon": -66.85931699654762,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 139,
+    "lat": 10.615615926153847,
+    "lon": -66.85360796365384,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 140,
+    "lat": 10.616132531428573,
+    "lon": -66.85756150857142,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 141,
+    "lat": 10.615968156666666,
+    "lon": -66.84838312833334,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 6
+  },
+  {
+    "id": 142,
+    "lat": 10.614425736818182,
+    "lon": -66.83890919227272,
+    "damage": "Destroyed",
+    "medical_score": 3,
+    "machinery_score": 6
+  },
+  {
+    "id": 143,
+    "lat": 10.614915326760563,
+    "lon": -66.84421429197184,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 144,
+    "lat": 10.6148392825,
+    "lon": -66.837810166,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 6
+  },
+  {
+    "id": 145,
+    "lat": 10.615026033636363,
+    "lon": -66.84042306454545,
+    "damage": "Destroyed",
+    "medical_score": 3,
+    "machinery_score": 3
+  },
+  {
+    "id": 146,
+    "lat": 10.615587603814435,
+    "lon": -66.83705003910653,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 147,
+    "lat": 10.615642495,
+    "lon": -66.84666710399999,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 148,
+    "lat": 10.616277492608695,
+    "lon": -66.84273860652173,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 2
+  },
+  {
+    "id": 149,
+    "lat": 10.617645295555556,
+    "lon": -66.844938664,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 150,
+    "lat": 10.61776499,
+    "lon": -66.84627419818183,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 151,
+    "lat": 10.619438562435898,
+    "lon": -66.84675992099068,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 152,
+    "lat": 10.616437820309278,
+    "lon": -66.8473539613402,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 8
+  },
+  {
+    "id": 153,
+    "lat": 10.616586748181819,
+    "lon": -66.84840636181819,
+    "damage": "Possibly damaged",
+    "medical_score": 1,
+    "machinery_score": 5
+  },
+  {
+    "id": 154,
+    "lat": 10.61668295,
+    "lon": -66.85421626,
+    "damage": "Possibly damaged",
+    "medical_score": 1,
+    "machinery_score": 3
+  },
+  {
+    "id": 155,
+    "lat": 10.616616611666666,
+    "lon": -66.85646213888889,
+    "damage": "Possibly damaged",
+    "medical_score": 1,
+    "machinery_score": 2
+  },
+  {
+    "id": 156,
+    "lat": 10.61723531,
+    "lon": -66.84947349,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 8
+  },
+  {
+    "id": 157,
+    "lat": 10.617154388333333,
+    "lon": -66.85074444333334,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 6
+  },
+  {
+    "id": 158,
+    "lat": 10.617269076153844,
+    "lon": -66.84835332076923,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 12
+  },
+  {
+    "id": 159,
+    "lat": 10.617302464,
+    "lon": -66.85434701199999,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 4
+  },
+  {
+    "id": 160,
+    "lat": 10.618373467805908,
+    "lon": -66.85435146059072,
+    "damage": "Destroyed",
+    "medical_score": 3,
+    "machinery_score": 6
+  },
+  {
+    "id": 161,
+    "lat": 10.61775916357143,
+    "lon": -66.84961921357143,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 10
+  },
+  {
+    "id": 162,
+    "lat": 10.617992012857142,
+    "lon": -66.84787401999999,
+    "damage": "Destroyed",
+    "medical_score": 3,
+    "machinery_score": 9
+  },
+  {
+    "id": 163,
+    "lat": 10.618575198243244,
+    "lon": -66.85117064162162,
+    "damage": "Destroyed",
+    "medical_score": 3,
+    "machinery_score": 3
+  },
+  {
+    "id": 164,
+    "lat": 10.61876540826087,
+    "lon": -66.84911322956522,
+    "damage": "Destroyed",
+    "medical_score": 3,
+    "machinery_score": 6
+  },
+  {
+    "id": 165,
+    "lat": 10.6188720975,
+    "lon": -66.84746697125,
+    "damage": "Damaged",
+    "medical_score": 2,
+    "machinery_score": 6
+  }
+]
