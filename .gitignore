@@ -1,0 +1,17 @@
+.env
+.env.local
+.env.*.local
+*.key
+*api_key*
+
+.DS_Store
+Thumbs.db
+
+.vscode/
+.idea/
+*.swp
+
+dist/
+build/
+out/
+*.log
