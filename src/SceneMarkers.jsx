@@ -27,13 +27,13 @@ export default function SceneMarkers({ buildings, getColor, selectedId, onSelect
           <mesh
             position={[x, 0, z]}
             key={b.id}
-            scale={isSelected ? 1.3 : 1}
+            scale={isSelected ? 1.15 : 1}
             onClick={(event) => {
               event.stopPropagation();
               if (onSelect) onSelect(b);
             }}
           >
-            <sphereGeometry args={[0.5, 8, 8]} />
+            <sphereGeometry args={[8, 12, 12]} />
             <meshStandardMaterial color={getColor(b)} />
           </mesh>
         );

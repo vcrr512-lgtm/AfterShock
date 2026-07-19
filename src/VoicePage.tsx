@@ -15,6 +15,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Spatialized2DElementContainer } from "@webspatial/react-sdk";
 import SceneMarkers, { toSceneCoords } from "./SceneMarkers";
+import DomMarkers from "./DomMarkers";
 import { getRanked } from "./lib/ranking.js";
 
 const HISTORY_WINDOW_NAME = "damage-detail";
@@ -52,6 +53,9 @@ function getScoreColor(building: Building, view: "medical" | "machinery") {
 export default function VoicePage() {
   const [activeCategory, setActiveCategory] = useState<DamageCategory>("Medical");
   const [selectedId, setSelectedId] = useState<number | null>(null);
+  const [sharedGLContext, setSharedGLContext] = useState<any>(null);
+  const sceneContainerRef = useMemo(() => ({ current: null }), []);
+  const [externalCanvas, setExternalCanvas] = useState<any>(null);
 
   const activeView = activeCategory.toLowerCase() as "medical" | "machinery";
   const activeScoreKey = activeView === "medical" ? "medical_score" : "machinery_score";
@@ -94,6 +98,38 @@ export default function VoicePage() {
   const cameraPosition = useMemo(() => {
     return [sceneView.x, sceneView.distance * 0.85, sceneView.z + sceneView.distance * 0.95] as const;
   }, [sceneView]);
+
+  useEffect(() => {
+    // If another library (WebSpatial) created a WebGL2 context on the page,
+    // try to reuse it so Three can render into the same canvas without
+    // hitting "existing context of a different type" errors.
+    try {
+      const existing = document.querySelector('canvas');
+      const ctx = existing ? (existing.getContext('webgl2') || existing.getContext('webgl')) : null;
+      if (ctx) setSharedGLContext(ctx);
+    } catch (e) {
+      // Ignore; leave sharedGLContext null
+    }
+  }, []);
+
+  useEffect(() => {
+    // create a dedicated canvas inside the scene container to avoid
+    // conflicts with any other WebGL canvas on the page (WebSpatial).
+    try {
+      const container = (document.querySelector('.scene-shell')) as HTMLElement | null;
+      if (container && !externalCanvas) {
+        const c = document.createElement('canvas');
+        c.style.width = '100%';
+        c.style.height = '100%';
+        c.style.display = 'block';
+        c.style.position = 'relative';
+        container.appendChild(c);
+        setExternalCanvas(c);
+      }
+    } catch (e) {
+      // ignore
+    }
+  }, [externalCanvas]);
 
   return (
     <div className="dashboard-root">
@@ -141,20 +177,13 @@ export default function VoicePage() {
             <p>{sortedBuildings.length} scored buildings • {activeCategory} focus</p>
           </div>
 
-          <div className="scene-shell" style={{ width: "100%", height: 320, minHeight: 320, display: "block" }}>
-            <Canvas
-              camera={{ position: cameraPosition, fov: 45 }}
-              onCreated={({ camera }) => camera.lookAt(sceneView.x, 0, sceneView.z)}
-            >
-              <ambientLight intensity={0.6} />
-              <directionalLight position={[10, 20, 10]} intensity={0.9} />
-              <SceneMarkers
-                buildings={sortedBuildings}
-                selectedId={selectedId}
-                onSelect={(building: any) => setSelectedId(building.id)}
-                getColor={(building: any) => getScoreColor(building, activeView)}
-              />
-            </Canvas>
+          <div className="scene-shell" style={{ width: "100%", height: 320, minHeight: 320, display: "block", position: "relative" }}>
+            <DomMarkers
+              buildings={sortedBuildings}
+              selectedId={selectedId}
+              onSelect={(building: any) => setSelectedId(building.id)}
+              getColor={(building: any) => getScoreColor(building, activeView)}
+            />
           </div>
         </Spatialized2DElementContainer>
 

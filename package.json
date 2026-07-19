@@ -9,8 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@react-three/drei": "^9.28.1",
-    "@react-three/fiber": "^8.17.1",
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.18.0",
     "@webspatial/core-sdk": "latest",
     "@webspatial/react-sdk": "latest",
     "react": "^18.3.1",
