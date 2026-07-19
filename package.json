@@ -14,10 +14,11 @@
     "@react-three/fiber": "^8.18.0",
     "@webspatial/core-sdk": "latest",
     "@webspatial/react-sdk": "latest",
-    "three": "^0.185.1",
+    "maplibre-gl": "^5.24.0",
+    "openai": "^6.48.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "openai": "^6.48.0"
+    "three": "^0.185.1"
   },
   "devDependencies": {
     "@types/react": "^18.3.5",

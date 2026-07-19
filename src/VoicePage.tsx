@@ -14,7 +14,12 @@ import explanationsData from "./data/explanations.json";
 import { useEffect, useMemo, useState } from "react";
 import { Spatialized2DElementContainer } from "@webspatial/react-sdk";
 import DomMarkers from "./DomMarkers";
+import DamageMap from "./DamageMap"; // from ishani/scene — Phase 1: terrain only, no markers yet
 import { getRanked } from "./lib/ranking.js";
+
+// Flip to false to instantly revert to the known-working flat dot view —
+// keep this true only once DamageMap is confirmed rendering in the emulator.
+const USE_3D_MAP = true;
 
 const HISTORY_WINDOW_NAME = "damage-detail";
 
@@ -36,16 +41,17 @@ const CATEGORIES: { key: DamageCategory; label: string }[] = [
 
 const BUILDINGS = buildingsData as Building[];
 
-function getScoreColor(building: Building, view: "medical" | "machinery") {
-  const key = view === "medical" ? "medical_score" : "machinery_score";
-  const allScores = BUILDINGS.map((candidate) => candidate[key]);
-  const min = Math.min(...allScores);
-  const max = Math.max(...allScores);
-  const t = (building[key] - min) / (max - min || 1);
-  const r = Math.round(100 + t * 155);
-  const g = Math.round(100 - t * 100);
-  const b = Math.round(100 - t * 100);
-  return `rgb(${r},${g},${b})`;
+function getScoreColor(building: Building) {
+  switch (building.damage) {
+    case "Destroyed":
+      return "#ef4444"; // red — highest severity
+    case "Damaged":
+      return "#f97316"; // orange — medium severity
+    case "Possibly damaged":
+      return "#eab308"; // yellow — lowest severity
+    default:
+      return "#9ca3af"; // grey fallback, shouldn't normally hit
+  }
 }
 
 export default function VoicePage() {
@@ -155,12 +161,20 @@ export default function VoicePage() {
           </div>
 
           <div className="scene-shell" style={{ width: "100%", height: 320, minHeight: 320, display: "block", position: "relative" }}>
-            <DomMarkers
-              buildings={sortedBuildings}
-              selectedId={selectedId}
-              onSelect={(building: any) => setSelectedId(building.id)}
-              getColor={(building: any) => getScoreColor(building, activeView)}
-            />
+            {USE_3D_MAP ? (
+              <DamageMap
+                buildings={sortedBuildings as any}
+                mode={activeView}
+                onSelectBuilding={(id: number) => setSelectedId(id)}
+              />
+            ) : (
+              <DomMarkers
+                buildings={sortedBuildings}
+                selectedId={selectedId}
+                onSelect={(building: any) => setSelectedId(building.id)}
+                getColor={(building: any) => getScoreColor(building)}
+              />
+            )}
           </div>
         </Spatialized2DElementContainer>
       </div>
