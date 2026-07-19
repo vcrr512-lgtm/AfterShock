@@ -64,9 +64,22 @@ function damageColorCss(damage) {
   }
 }
 
-/** score (1–3) -> on-screen bar height in pixels. Tune visually. */
-function scoreToHeightPx(score) {
-  return 14 + (score || 0) * 14; // score 1 -> 28px, score 3 -> 56px
+/**
+ * Maps a raw score to an on-screen bar height, scaled relative to the
+ * actual min/max of the CURRENTLY ACTIVE score field across all buildings
+ * — not a fixed range. This matters because medical_score is always 1–3,
+ * but machinery_score is unbounded (clustering-weighted, real data goes
+ * up to 14+). A fixed multiplier tuned for 1–3 would make Machinery mode
+ * bars comically tall. Both modes now always render in the same sane
+ * MIN_PX–MAX_PX range regardless of their underlying scale.
+ */
+const MIN_PX = 16;
+const MAX_PX = 70;
+
+function normalizedHeightPx(score, minScore, maxScore) {
+  const range = maxScore - minScore || 1; // guard divide-by-zero if all scores equal
+  const t = ((score || 0) - minScore) / range;
+  return MIN_PX + t * (MAX_PX - MIN_PX);
 }
 
 /**
@@ -138,8 +151,8 @@ export default function DamageMap({ buildings = [], mode = 'medical', onSelectBu
         style: { version: 8, sources: {}, layers: [] },
         center: [center.lon, center.lat],
         zoom: 14,
-        pitch: 60,
-        bearing: -20,
+        pitch: 0,        // starts near top-down; flies into the aerial angle below on load
+        bearing: 0,
         antialias: true,
         maxBounds: REGIONAL_MAX_BOUNDS,
         minZoom: 6,
@@ -173,7 +186,15 @@ export default function DamageMap({ buildings = [], mode = 'medical', onSelectBu
         });
         map.addLayer({ id: 'satellite-layer', type: 'raster', source: 'satellite' });
 
-        map.fitBounds(bounds, { padding: 60, pitch: 60, duration: 0 });
+        // Brief pause so satellite/terrain tiles have a moment to actually
+        // paint before the camera starts moving — otherwise the fly-in
+        // plays while the view is still blank/loading.
+        setTimeout(() => {
+          // Slow, straight-down-leaning aerial angle (15° — enough to still
+          // read the marker spikes as 3D, without tilting into a horizon
+          // view on a ~29km-wide extent). North-up, no rotation.
+          map.fitBounds(bounds, { padding: 60, pitch: 15, bearing: 0, duration: 3200 });
+        }, 1200);
 
         setStatus('ready');
       } catch (err) {
@@ -203,10 +224,17 @@ export default function DamageMap({ buildings = [], mode = 'medical', onSelectBu
     const scoreField = mode === 'machinery' ? 'machinery_score' : 'medical_score';
     const seenIds = new Set();
 
+    // Compute the active field's actual range once per update — this is
+    // what lets Medical (1–3) and Machinery (unbounded, real data goes to
+    // 14+) both render in the same sane visual height range.
+    const scores = buildings.map((b) => b[scoreField] || 0);
+    const minScore = Math.min(...scores);
+    const maxScore = Math.max(...scores);
+
     for (const b of buildings) {
       seenIds.add(b.id);
       const color = damageColorCss(b.damage);
-      const heightPx = scoreToHeightPx(b[scoreField]);
+      const heightPx = normalizedHeightPx(b[scoreField], minScore, maxScore);
 
       let entry = markersRef.current.get(b.id);
       if (!entry) {
