@@ -12,9 +12,7 @@
 import buildingsData from "./data/buildings_scored.json";
 import explanationsData from "./data/explanations.json";
 import { useEffect, useMemo, useState } from "react";
-import { Canvas } from "@react-three/fiber";
 import { Spatialized2DElementContainer } from "@webspatial/react-sdk";
-import SceneMarkers, { toSceneCoords } from "./SceneMarkers";
 import DomMarkers from "./DomMarkers";
 import { getRanked } from "./lib/ranking.js";
 
@@ -53,16 +51,13 @@ function getScoreColor(building: Building, view: "medical" | "machinery") {
 export default function VoicePage() {
   const [activeCategory, setActiveCategory] = useState<DamageCategory>("Medical");
   const [selectedId, setSelectedId] = useState<number | null>(null);
-  const [sharedGLContext, setSharedGLContext] = useState<any>(null);
-  const sceneContainerRef = useMemo(() => ({ current: null }), []);
-  const [externalCanvas, setExternalCanvas] = useState<any>(null);
 
   const activeView = activeCategory.toLowerCase() as "medical" | "machinery";
   const activeScoreKey = activeView === "medical" ? "medical_score" : "machinery_score";
 
-  const sortedBuildings = useMemo(() => {
-    return getRanked(BUILDINGS, activeView);
-  }, [activeCategory]);
+ const sortedBuildings = useMemo(() => {
+  return getRanked(BUILDINGS, activeView) as (Building & { rank: number })[];
+}, [activeCategory]);
 
   useEffect(() => {
     setSelectedId(sortedBuildings[0]?.id ?? null);
@@ -74,62 +69,6 @@ export default function VoicePage() {
   const explanation = explanationKey
     ? (explanationsData[explanationKey as keyof typeof explanationsData] as string | undefined)
     : undefined;
-
-  const sceneView = useMemo(() => {
-    if (!sortedBuildings.length) {
-      return { x: 0, z: 0, distance: 120 };
-    }
-
-    const coords = sortedBuildings.map((building) => toSceneCoords(building.lat, building.lon));
-    const xs = coords.map((coordinate) => coordinate.x);
-    const zs = coords.map((coordinate) => coordinate.z);
-    const minX = Math.min(...xs);
-    const maxX = Math.max(...xs);
-    const minZ = Math.min(...zs);
-    const maxZ = Math.max(...zs);
-    const centerX = (minX + maxX) / 2;
-    const centerZ = (minZ + maxZ) / 2;
-    const span = Math.max(maxX - minX, maxZ - minZ);
-    const distance = Math.max(90, span * 0.9 + 50);
-
-    return { x: centerX, z: centerZ, distance };
-  }, [sortedBuildings]);
-
-  const cameraPosition = useMemo(() => {
-    return [sceneView.x, sceneView.distance * 0.85, sceneView.z + sceneView.distance * 0.95] as const;
-  }, [sceneView]);
-
-  useEffect(() => {
-    // If another library (WebSpatial) created a WebGL2 context on the page,
-    // try to reuse it so Three can render into the same canvas without
-    // hitting "existing context of a different type" errors.
-    try {
-      const existing = document.querySelector('canvas');
-      const ctx = existing ? (existing.getContext('webgl2') || existing.getContext('webgl')) : null;
-      if (ctx) setSharedGLContext(ctx);
-    } catch (e) {
-      // Ignore; leave sharedGLContext null
-    }
-  }, []);
-
-  useEffect(() => {
-    // create a dedicated canvas inside the scene container to avoid
-    // conflicts with any other WebGL canvas on the page (WebSpatial).
-    try {
-      const container = (document.querySelector('.scene-shell')) as HTMLElement | null;
-      if (container && !externalCanvas) {
-        const c = document.createElement('canvas');
-        c.style.width = '100%';
-        c.style.height = '100%';
-        c.style.display = 'block';
-        c.style.position = 'relative';
-        container.appendChild(c);
-        setExternalCanvas(c);
-      }
-    } catch (e) {
-      // ignore
-    }
-  }, [externalCanvas]);
 
   return (
     <div className="dashboard-root">
