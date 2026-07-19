@@ -55,9 +55,9 @@ export default function VoicePage() {
   const activeView = activeCategory.toLowerCase() as "medical" | "machinery";
   const activeScoreKey = activeView === "medical" ? "medical_score" : "machinery_score";
 
- const sortedBuildings = useMemo(() => {
-  return getRanked(BUILDINGS, activeView) as (Building & { rank: number })[];
-}, [activeCategory]);
+  const sortedBuildings = useMemo(() => {
+    return getRanked(BUILDINGS, activeView) as (Building & { rank: number })[];
+  }, [activeCategory]);
 
   useEffect(() => {
     setSelectedId(sortedBuildings[0]?.id ?? null);
@@ -80,6 +80,7 @@ export default function VoicePage() {
       </header>
 
       <div className="dashboard-panel-grid">
+        {/* Panel 1: Dispatch Mode toggle */}
         <Spatialized2DElementContainer
           ref={null}
           component="section"
@@ -105,27 +106,7 @@ export default function VoicePage() {
           </div>
         </Spatialized2DElementContainer>
 
-        <Spatialized2DElementContainer
-          ref={null}
-          component="section"
-          data-spatial-id="building-grid-panel"
-          className="dashboard-panel buildings-panel"
-        >
-          <div className="panel-heading">
-            <h2>Building Priorities</h2>
-            <p>{sortedBuildings.length} scored buildings • {activeCategory} focus</p>
-          </div>
-
-          <div className="scene-shell" style={{ width: "100%", height: 320, minHeight: 320, display: "block", position: "relative" }}>
-            <DomMarkers
-              buildings={sortedBuildings}
-              selectedId={selectedId}
-              onSelect={(building: any) => setSelectedId(building.id)}
-              getColor={(building: any) => getScoreColor(building, activeView)}
-            />
-          </div>
-        </Spatialized2DElementContainer>
-
+        {/* Panel 2: Selected Building Details (moved up — was last, now shows without scrolling) */}
         <Spatialized2DElementContainer
           ref={null}
           component="aside"
@@ -159,6 +140,28 @@ export default function VoicePage() {
           ) : (
             <p className="detail-text">Select a building to view its actual score and damage grade.</p>
           )}
+        </Spatialized2DElementContainer>
+
+        {/* Panel 3: Building Priorities scatter */}
+        <Spatialized2DElementContainer
+          ref={null}
+          component="section"
+          data-spatial-id="building-grid-panel"
+          className="dashboard-panel buildings-panel"
+        >
+          <div className="panel-heading">
+            <h2>Building Priorities</h2>
+            <p>{sortedBuildings.length} scored buildings • {activeCategory} focus</p>
+          </div>
+
+          <div className="scene-shell" style={{ width: "100%", height: 320, minHeight: 320, display: "block", position: "relative" }}>
+            <DomMarkers
+              buildings={sortedBuildings}
+              selectedId={selectedId}
+              onSelect={(building: any) => setSelectedId(building.id)}
+              getColor={(building: any) => getScoreColor(building, activeView)}
+            />
+          </div>
         </Spatialized2DElementContainer>
       </div>
     </div>

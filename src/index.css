@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,12 +10,34 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bg: #08090b;
+  --panel-bg: #101317;
+  --panel-border: rgba(255, 255, 255, 0.07);
+  --text-primary: #f4f6f8;
+  --text-muted: #8b96a3;
+  --text-faint: rgba(255, 255, 255, 0.35);
+
+  --accent-cyan: #22d3ee;
+  --accent-cyan-dim: rgba(34, 211, 238, 0.35);
+  --accent-amber: #f97316;
+  --accent-red: #ef4444;
+  --accent-yellow: #eab308;
+
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --sans: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
 body {
   margin: 0;
-  background-color: #0d0d0d;
-  color: #ffffff;
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 42px 42px;
+  color: var(--text-primary);
   min-height: 100svh;
-  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--sans);
 }
 
 button {
@@ -26,8 +50,11 @@ html.is-spatial {
 
   body {
     background-color: transparent;
+    background-image: none;
   }
 }
+
+/* ── Layout shell ─────────────────────────────────────────────────────────── */
 
 .dashboard-root {
   display: flex;
@@ -44,18 +71,10 @@ html.is-spatial {
   align-items: start;
 }
 
-.dashboard-panel,
-.detail-panel,
-.history-page-root {
-  border-radius: 28px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(10, 10, 10, 0.94);
-  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.28);
-}
-
-.dashboard-panel {
-  min-width: min(100%, 320px);
-  padding: 1.75rem;
+/* Building Priorities panel now spans the full grid width, fixing the
+   dead empty column that used to sit under the detail panel. */
+.buildings-panel {
+  grid-column: 1 / -1;
 }
 
 .dashboard-header {
@@ -63,12 +82,69 @@ html.is-spatial {
   align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--panel-border);
 }
 
 .dashboard-header h1 {
-  font-size: clamp(2rem, 2.5vw, 3rem);
+  font-size: clamp(1.6rem, 2.2vw, 2.4rem);
   margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.dashboard-subtitle {
+  margin: 0.5rem 0 0;
+  color: var(--text-muted);
+  max-width: 42rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-family: var(--mono);
+}
+
+/* ── Panels ───────────────────────────────────────────────────────────────── */
+
+.dashboard-panel,
+.detail-panel,
+.history-page-root {
+  position: relative;
+  border-radius: 14px;
+  border: 1px solid var(--panel-border);
+  background: var(--panel-bg);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+
+/* Thin glowing accent bar along the top of each panel type, color-coded
+   by role so the eye can tell panels apart at a glance. */
+.dashboard-panel::before,
+.detail-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+}
+
+.toggle-panel::before {
+  background: var(--accent-cyan);
+  box-shadow: 0 0 12px 1px var(--accent-cyan-dim);
+}
+
+.detail-panel::before {
+  background: var(--accent-amber);
+  box-shadow: 0 0 12px 1px rgba(249, 115, 22, 0.35);
+}
+
+.buildings-panel::before {
+  background: linear-gradient(90deg, var(--accent-red), var(--accent-amber), var(--accent-yellow));
+}
+
+.dashboard-panel {
+  min-width: min(100%, 320px);
+  padding: 1.75rem;
 }
 
 .panel-heading {
@@ -80,48 +156,59 @@ html.is-spatial {
 
 .panel-heading h2 {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
 }
 
 .panel-heading p {
   margin: 0;
-  color: #a0aec0;
+  color: var(--text-faint);
   line-height: 1.5;
+  font-size: 0.85rem;
+  font-family: var(--mono);
 }
 
-.dashboard-subtitle {
-  margin: 0.75rem 0 0;
-  color: #cbd5e1;
-  max-width: 42rem;
-}
+/* ── Dispatch toggle ──────────────────────────────────────────────────────── */
 
 .button-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 0.6rem;
   margin-bottom: 0.5rem;
 }
 
 .category-button {
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.06);
-  color: #e2e8f0;
-  padding: 0.85rem 1.25rem;
-  border-radius: 999px;
+  border: 1px solid var(--panel-border);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-muted);
+  padding: 0.75rem 1.1rem;
+  border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.18s ease, background-color 0.18s ease;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
 
 .category-button:hover {
   transform: translateY(-1px);
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary);
 }
 
 .category-button.selected {
-  background: rgba(66, 153, 225, 0.18);
-  border-color: rgba(66, 153, 225, 0.45);
-  color: #ffffff;
+  background: rgba(34, 211, 238, 0.1);
+  border-color: var(--accent-cyan-dim);
+  color: var(--accent-cyan);
+  box-shadow: 0 0 0 1px var(--accent-cyan-dim) inset;
 }
+
+/* ── Legacy dot-card grid (unused by current DomMarkers view, kept for
+   compatibility if referenced elsewhere) ───────────────────────────────── */
 
 .damage-grid {
   display: grid;
@@ -131,7 +218,7 @@ html.is-spatial {
 
 .dot-card {
   border: none;
-  border-radius: 24px;
+  border-radius: 12px;
   min-height: 120px;
   color: #ffffff;
   display: grid;
@@ -147,6 +234,8 @@ html.is-spatial {
   box-shadow: 0 18px 32px rgba(0, 0, 0, 0.24);
 }
 
+/* ── Detail panel ─────────────────────────────────────────────────────────── */
+
 .detail-panel {
   min-width: min(100%, 320px);
   padding: 1.75rem;
@@ -156,21 +245,45 @@ html.is-spatial {
 }
 
 .detail-panel h2 {
-  margin: 0;
-  font-size: 1.5rem;
+  margin: 0 0 0.25rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
 }
 
 .detail-row {
   display: flex;
-  gap: 0.5rem;
-  color: #cbd5e1;
+  gap: 0.6rem;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.detail-row strong {
+  color: var(--text-faint);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  min-width: 92px;
+}
+
+.detail-row:not(:has(.detail-text)) {
+  font-family: var(--mono);
+  color: var(--text-primary);
 }
 
 .detail-text,
 .history-body {
-  color: #e2e8f0;
-  line-height: 1.75;
+  color: var(--text-primary);
+  line-height: 1.7;
+  font-size: 0.92rem;
 }
+
+/* ── History / XR scene page ──────────────────────────────────────────────── */
 
 .history-page-root {
   padding: 2rem;
@@ -184,7 +297,9 @@ html.is-spatial {
 
 .history-header h1 {
   margin: 0;
-  font-size: 1.75rem;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .history-body {
@@ -194,24 +309,7 @@ html.is-spatial {
 }
 
 .history-note {
-  color: #a0aec0;
-}
-
-@media (max-width: 900px) {
-  .dashboard-root {
-    padding: 1.5rem;
-  }
-
-  .dashboard-panel-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .dashboard-panel,
-  .detail-panel,
-  .history-page-root {
-    width: 100%;
-    max-width: 100%;
-  }
+  color: var(--text-muted);
 }
 
 .history-empty {
@@ -219,8 +317,9 @@ html.is-spatial {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--text-faint);
   font-size: 0.9rem;
+  font-family: var(--mono);
 }
 
 .history-feed {
@@ -234,34 +333,47 @@ html.is-spatial {
 
 .history-card {
   padding: 0.85rem 1rem;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  border: 1px solid var(--panel-border);
+  background: rgba(255, 255, 255, 0.04);
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
 }
 
 .history-card-time {
-  font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.7rem;
+  color: var(--text-faint);
   font-variant-numeric: tabular-nums;
+  font-family: var(--mono);
 }
 
 .history-card-text {
-  font-size: 0.95rem;
-  color: #ffffff;
+  font-size: 0.92rem;
+  color: var(--text-primary);
   margin: 0;
   line-height: 1.5;
 }
 
-/* ── XR HistoryPage layout ───────────────────────────────────────────────── */
+/* ── Responsive ───────────────────────────────────────────────────────────── */
 
-.history-page-root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100svh;
-  padding: 1.5rem;
-  gap: 1rem;
-  background: transparent;
+@media (max-width: 900px) {
+  .dashboard-root {
+    padding: 1.5rem;
+  }
+
+  .dashboard-panel-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .buildings-panel {
+    grid-column: 1;
+  }
+
+  .dashboard-panel,
+  .detail-panel,
+  .history-page-root {
+    width: 100%;
+    max-width: 100%;
+  }
 }
