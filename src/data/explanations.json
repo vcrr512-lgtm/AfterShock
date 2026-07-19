@@ -1,12 +1,13 @@
 {
-  "medical_93": "This building is a priority for immediate response due to its \"Destroyed\" status, indicating possible trapped occupants needing urgent extraction.",
-  "medical_94": "This building is a priority for immediate response due to its \"Destroyed\" status, indicating a high likelihood of trapped occupants needing urgent extraction.",
-  "medical_115": "This building is a priority for the responder due to its \"Destroyed\" damage level, indicating a potential need for immediate extraction of occupants. The USGS ShakeMap indicates an MMI of 7.5, which diverges from the expected shaking-intensity pattern for a \"Destroyed\" building.",
-  "medical_132": "This building is a priority for the responder due to its \"Destroyed\" status, indicating a possible urgent need for occupant extraction.",
-  "medical_142": "This building is a priority due to its \"Destroyed\" status, indicating potential trapped occupants requiring immediate extraction.",
-  "machinery_20": "With a machinery priority score of 14, this building would be a solid priority, as it contributes to the clearing of multiple nearby sites.",
-  "machinery_24": "With a machinery priority score of 14, this building is part of a dense cluster of damage and should be prioritized for a crane deployment to maximize efficiency in clearing multiple sites.",
-  "machinery_9": "This building, with a machinery priority score of 12, indicates it’s situated in a denser cluster of damage, making it a good candidate for deployment.",
-  "machinery_26": "This building, with a machinery priority score of 12, is a reasonable choice for deployment as it is situated within a denser cluster of damage, allowing for the potential to clear multiple sites with one operation.",
-  "machinery_27": "With a machinery priority score of 12, this building is a sensible choice for deployment, as its proximity to other damaged sites means one crane can efficiently clear multiple locations."
+  "medical_93": "This building is a priority for immediate response due to its \"Destroyed\" status, indicating potential casualties needing urgent extraction.",
+  "medical_94": "This building is a priority for response due to its \"Destroyed\" status, indicating potential trapped occupants needing immediate extraction.",
+  "medical_115": "This building is a priority for immediate response due to its \"Destroyed\" damage level, indicating potential trapped occupants needing urgent rescue. The MMI 7.5 shaking-intensity band is notably higher than expected for a \"Destroyed\" classification, warranting a closer look.",
+  "medical_132": "This building is a priority for response due to its \"Destroyed\" status, indicating potential trapped occupants needing immediate rescue.",
+  "medical_142": "This building is a priority because it has a damage level of \"Destroyed,\" indicating a possible urgent need for immediate extraction of trapped occupants.",
+  "machinery_20": "This building, with a machinery priority score of 14, is a reasonable choice for deployment as it is situated within a denser cluster, maximizing the impact of sending a crane or excavator.",
+  "machinery_24": "This building has a machinery priority score of 14, indicating it's in a moderately dense area of damage, so it should be addressed, but it’s not the immediate focus compared to higher-scoring sites.",
+  "machinery_9": "With a machinery priority score of 12, this building is in a denser cluster of damage, making it a priority for deployment as it can help clear multiple nearby sites efficiently.",
+  "machinery_26": "With a machinery priority score of 12, this building would be a priority for deployment, as it is situated in a dense cluster of damage where one crane could effectively clear multiple sites.",
+  "machinery_27": "This building’s priority score of 12 indicates it’s in a denser cluster of damage, making it a good candidate for crane deployment to effectively clear multiple nearby sites.",
+  "coordinator": "The medical team should address Building 93 first to provide immediate life-saving support, given the potential casualties in a \"Destroyed\" building. Following this urgent response, both teams should coordinate their efforts at Building 20; while the machinery team can begin deploying equipment to stabilize the area, the medical team can remain on standby to assist with any rescues that may arise during the operation. This approach allows both teams to effectively prioritize their responsibilities while ensuring that the needs of those potentially trapped are addressed promptly."
 }
