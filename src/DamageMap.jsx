@@ -1,13 +1,23 @@
 // DamageMap.jsx
-// PHASE 1 — map + terrain + satellite basemap only. No markers yet (that's Phase 2).
+// PHASE 1 — map + terrain + satellite basemap.
+// PHASE 2 — damage markers, one per building, built as MapLibre's native
+// HTML Marker (a small DOM element MapLibre positions/repositions for you).
+//
+// NOTE ON APPROACH: the original plan was a Three.js custom WebGL layer
+// (true 3D world-space spikes sharing the map's camera). That hit a
+// rendering bug that couldn't be pinned down after extensive debugging, so
+// this version uses MapLibre's built-in Marker API instead — a colored dot
+// with a bar beneath it, sized by score. Same visual idea (dot + spike,
+// colored by damage, height by score), same props contract, just far more
+// reliable since MapLibre handles all positioning/terrain/zoom tracking
+// internally instead of us hand-rolling WebGL matrix math.
 //
 // Dependencies: npm install maplibre-gl
 //
-// Props (full contract per spec — mode/onSelectBuilding are accepted now but
-// unused until Phase 2 wires in the Three.js marker layer):
-//   buildings         Building[]                       used now, to compute bounds
-//   mode              "medical" | "machinery"           unused in this phase
-//   onSelectBuilding  (id: number) => void               unused in this phase
+// Props (full contract per spec):
+//   buildings         Building[]                 drives bounds + markers
+//   mode              "medical" | "machinery"     drives marker height/color
+//   onSelectBuilding  (id: number) => void        fired on marker click
 
 import { useEffect, useRef, useState } from 'react';
 import maplibregl from 'maplibre-gl';
@@ -27,8 +37,6 @@ function computeBoundsAndCenter(buildings) {
     if (b.lon > maxLon) maxLon = b.lon;
   }
 
-  // 10% padding on each axis. Guard against a degenerate single-point
-  // dataset (padding of 0 would zoom in to nothing).
   const latSpan = maxLat - minLat || 0.01;
   const lonSpan = maxLon - minLon || 0.01;
   const latPad = latSpan * 0.1;
@@ -36,14 +44,61 @@ function computeBoundsAndCenter(buildings) {
 
   return {
     bounds: [
-      [minLon - lonPad, minLat - latPad], // southwest
-      [maxLon + lonPad, maxLat + latPad], // northeast
+      [minLon - lonPad, minLat - latPad],
+      [maxLon + lonPad, maxLat + latPad],
     ],
     center: {
       lon: (minLon + maxLon) / 2,
       lat: (minLat + maxLat) / 2,
     },
   };
+}
+
+/** Suggested color mapping from the spec — matches the Copernicus reference maps. */
+function damageColorCss(damage) {
+  switch (damage) {
+    case 'Destroyed': return '#dc2626';        // red
+    case 'Damaged': return '#f97316';          // orange
+    case 'Possibly damaged': return '#eab308'; // yellow
+    default: return '#9ca3af';                 // fallback gray — shouldn't occur with real data
+  }
+}
+
+/** score (1–3) -> on-screen bar height in pixels. Tune visually. */
+function scoreToHeightPx(score) {
+  return 14 + (score || 0) * 14; // score 1 -> 28px, score 3 -> 56px
+}
+
+/**
+ * Builds the DOM element for one marker: a colored dot with a bar beneath
+ * it running down to the anchor point (bottom), sized/colored by damage +
+ * active score. Returns both the outer element and refs to the dot/bar so
+ * updateBuildings can restyle them in place on mode changes without
+ * recreating the marker (keeps the "reshuffle" feel, not a rebuild).
+ */
+function createMarkerElement() {
+  const el = document.createElement('div');
+  el.style.display = 'flex';
+  el.style.flexDirection = 'column';
+  el.style.alignItems = 'center';
+  el.style.cursor = 'pointer';
+
+  const dot = document.createElement('div');
+  dot.style.width = '13px';
+  dot.style.height = '13px';
+  dot.style.borderRadius = '50%';
+  dot.style.border = '2px solid rgba(255,255,255,0.9)';
+  dot.style.boxShadow = '0 0 4px rgba(0,0,0,0.6)';
+  dot.style.flexShrink = '0';
+
+  const bar = document.createElement('div');
+  bar.style.width = '3px';
+  bar.style.opacity = '0.85';
+
+  el.appendChild(dot);
+  el.appendChild(bar);
+
+  return { el, dot, bar };
 }
 
 export default function DamageMap({ buildings = [], mode = 'medical', onSelectBuilding }) {
@@ -54,11 +109,11 @@ export default function DamageMap({ buildings = [], mode = 'medical', onSelectBu
   const [status, setStatus] = useState('loading'); // 'loading' | 'ready' | 'error'
   const [errorMsg, setErrorMsg] = useState(null);
 
+  const markersRef = useRef(new Map()); // Map<buildingId, { marker, dot, bar }>
+  const onSelectBuildingRef = useRef(onSelectBuilding);
+  onSelectBuildingRef.current = onSelectBuilding; // always fresh, no re-add needed
+
   useEffect(() => {
-    // Map is initialized exactly once. Later re-renders (e.g. mode toggling,
-    // or the parent re-passing a new buildings array reference) must NOT
-    // tear down and rebuild the map — Phase 2 will update markers in place
-    // instead. This effect intentionally has an empty dependency array.
     if (!containerRef.current || mapRef.current) return;
 
     const initialBuildings = initialBuildingsRef.current;
@@ -71,26 +126,23 @@ export default function DamageMap({ buildings = [], mode = 'medical', onSelectBu
     const { bounds, center } = computeBoundsAndCenter(initialBuildings);
 
     // Hard pan/zoom limit — roughly Venezuela + the southern Caribbean.
-    // Prevents zooming/panning out to the whole globe (wasted tile loads,
-    // and a bad look if someone scroll-zooms too far during a demo).
-    // [southwest, northeast]
     const REGIONAL_MAX_BOUNDS = [
-      [-73.5, 5.5],   // SW — past Venezuela's western border
-      [-58.0, 16.0],  // NE — into the southern Caribbean, past Trinidad
+      [-73.5, 5.5],
+      [-58.0, 16.0],
     ];
 
     let map;
     try {
       map = new maplibregl.Map({
         container: containerRef.current,
-        style: { version: 8, sources: {}, layers: [] }, // sources/layers added by hand below
+        style: { version: 8, sources: {}, layers: [] },
         center: [center.lon, center.lat],
         zoom: 14,
-        pitch: 60,       // tilted for a 3D read
+        pitch: 60,
         bearing: -20,
-        antialias: true, // needed later for the Three.js custom layer to look clean
+        antialias: true,
         maxBounds: REGIONAL_MAX_BOUNDS,
-        minZoom: 6,      // floor — roughly "whole country" scale, no further out
+        minZoom: 6,
       });
     } catch (err) {
       setStatus('error');
@@ -103,7 +155,6 @@ export default function DamageMap({ buildings = [], mode = 'medical', onSelectBu
 
     map.on('load', () => {
       try {
-        // Real elevation data — free, no key, no signup.
         map.addSource('terrain-dem', {
           type: 'raster-dem',
           tiles: ['https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png'],
@@ -112,9 +163,6 @@ export default function DamageMap({ buildings = [], mode = 'medical', onSelectBu
         });
         map.setTerrain({ source: 'terrain-dem', exaggeration: 1.5 });
 
-        // Satellite basemap texture, drapes onto the terrain automatically.
-        // NOTE: Esri World Imagery only. Per spec, no Vantor/Copernicus VHR
-        // imagery anywhere in this pipeline — rights-restricted.
         map.addSource('satellite', {
           type: 'raster',
           tiles: [
@@ -135,15 +183,60 @@ export default function DamageMap({ buildings = [], mode = 'medical', onSelectBu
     });
 
     map.on('error', (e) => {
-      // MapLibre fires this for tile load failures etc. — log, don't crash.
       console.error('MapLibre error:', e?.error || e);
     });
 
     return () => {
+      markersRef.current.forEach(({ marker }) => marker.remove());
+      markersRef.current.clear();
       map.remove();
       mapRef.current = null;
     };
   }, []);
+
+  // Adds/updates one Marker per building once the map is ready, then
+  // restyles them in place (no recreate) on every buildings/mode change.
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || status !== 'ready') return;
+
+    const scoreField = mode === 'machinery' ? 'machinery_score' : 'medical_score';
+    const seenIds = new Set();
+
+    for (const b of buildings) {
+      seenIds.add(b.id);
+      const color = damageColorCss(b.damage);
+      const heightPx = scoreToHeightPx(b[scoreField]);
+
+      let entry = markersRef.current.get(b.id);
+      if (!entry) {
+        const { el, dot, bar } = createMarkerElement();
+        el.addEventListener('click', (e) => {
+          e.stopPropagation();
+          onSelectBuildingRef.current?.(b.id);
+        });
+
+        const marker = new maplibregl.Marker({ element: el, anchor: 'bottom' })
+          .setLngLat([b.lon, b.lat])
+          .addTo(map);
+
+        entry = { marker, dot, bar };
+        markersRef.current.set(b.id, entry);
+      }
+
+      entry.dot.style.background = color;
+      entry.bar.style.background = color;
+      entry.bar.style.height = `${heightPx}px`;
+    }
+
+    // Remove markers for buildings no longer present.
+    for (const [id, entry] of markersRef.current) {
+      if (!seenIds.has(id)) {
+        entry.marker.remove();
+        markersRef.current.delete(id);
+      }
+    }
+  }, [status, buildings, mode]);
 
   return (
     <div style={{ position: 'relative', width: '100%', height: '100%' }}>

@@ -20,3 +20,5 @@ out/
 node_modules/
 # OS
 .DS_Store
+
+full_output.txt
