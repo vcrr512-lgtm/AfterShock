@@ -10,9 +10,9 @@
  */
 
 import buildingsData from "./data/buildings_scored.json";
-import type { SpatializedElement } from "@webspatial/core-sdk";
 import { useEffect, useMemo, useState } from "react";
-import { SpatializedContainer } from "@webspatial/react-sdk";
+import { Spatialized2DElementContainer } from "@webspatial/react-sdk";
+import { getRanked } from "./lib/ranking.js";
 
 const HISTORY_WINDOW_NAME = "damage-detail";
 
@@ -34,33 +34,28 @@ const CATEGORIES: { key: DamageCategory; label: string }[] = [
 
 const BUILDINGS = buildingsData as Building[];
 
-const damageColor = (damage: Building["damage"]) => {
-  switch (damage) {
-    case "Destroyed":
-      return "#f56565";
-    case "Damaged":
-      return "#f6ad55";
-    case "Possibly damaged":
-      return "#63b3ed";
-    default:
-      return "#a0aec0";
-  }
-};
+function getScoreColor(building: Building, view: "medical" | "machinery") {
+  const key = view === "medical" ? "medical_score" : "machinery_score";
+  const allScores = BUILDINGS.map((candidate) => candidate[key]);
+  const min = Math.min(...allScores);
+  const max = Math.max(...allScores);
+  const t = (building[key] - min) / (max - min || 1);
+  const r = Math.round(100 + t * 155);
+  const g = Math.round(100 - t * 100);
+  const b = Math.round(100 - t * 100);
+  return `rgb(${r},${g},${b})`;
+}
 
 export default function VoicePage() {
   const [activeCategory, setActiveCategory] = useState<DamageCategory>("Medical");
   const [selectedId, setSelectedId] = useState<number | null>(null);
 
-  const activeScoreKey = activeCategory === "Medical" ? "medical_score" : "machinery_score";
+  const activeView = activeCategory.toLowerCase() as "medical" | "machinery";
+  const activeScoreKey = activeView === "medical" ? "medical_score" : "machinery_score";
 
   const sortedBuildings = useMemo(() => {
-    return [...BUILDINGS].sort((a, b) => {
-      const scoreA = a[activeScoreKey];
-      const scoreB = b[activeScoreKey];
-      if (scoreB !== scoreA) return scoreB - scoreA;
-      return a.id - b.id;
-    });
-  }, [activeCategory, activeScoreKey]);
+    return getRanked(BUILDINGS, activeView);
+  }, [activeCategory]);
 
   useEffect(() => {
     setSelectedId(sortedBuildings[0]?.id ?? null);
@@ -79,10 +74,9 @@ export default function VoicePage() {
       </header>
 
       <div className="dashboard-panel-grid">
-        <SpatializedContainer
+        <Spatialized2DElementContainer
+          ref={null}
           component="section"
-          spatializedContent="div"
-          createSpatializedElement={() => Promise.resolve({} as SpatializedElement)}
           data-spatial-id="toggle-panel"
           className="dashboard-panel toggle-panel"
         >
@@ -103,12 +97,11 @@ export default function VoicePage() {
               </button>
             ))}
           </div>
-        </SpatializedContainer>
+        </Spatialized2DElementContainer>
 
-        <SpatializedContainer
+        <Spatialized2DElementContainer
+          ref={null}
           component="section"
-          spatializedContent="div"
-          createSpatializedElement={() => Promise.resolve({} as SpatializedElement)}
           data-spatial-id="building-grid-panel"
           className="dashboard-panel buildings-panel"
         >
@@ -128,7 +121,7 @@ export default function VoicePage() {
                   type="button"
                   className={`dot-card${isSelected ? " selected" : ""}${isTop ? " top-ranked" : ""}`}
                   style={{
-                    backgroundColor: damageColor(building.damage),
+                    backgroundColor: getScoreColor(building, activeView),
                     borderColor: isTop ? "#facc15" : "transparent",
                   }}
                   onClick={() => setSelectedId(building.id)}
@@ -140,12 +133,11 @@ export default function VoicePage() {
               );
             })}
           </div>
-        </SpatializedContainer>
+        </Spatialized2DElementContainer>
 
-        <SpatializedContainer
+        <Spatialized2DElementContainer
+          ref={null}
           component="aside"
-          spatializedContent="div"
-          createSpatializedElement={() => Promise.resolve({} as SpatializedElement)}
           data-spatial-id="detail-panel"
           className="detail-panel"
         >
@@ -168,7 +160,7 @@ export default function VoicePage() {
           ) : (
             <p className="detail-text">Select a building to view its actual score and damage grade.</p>
           )}
-        </SpatializedContainer>
+        </Spatialized2DElementContainer>
       </div>
     </div>
   );
