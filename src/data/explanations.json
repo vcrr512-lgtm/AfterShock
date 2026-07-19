@@ -1,12 +1,12 @@
 {
-  "medical_93": "This building is a priority for immediate response due to its \"Destroyed\" status, indicating potential trapped occupants needing urgent extraction.",
-  "medical_94": "This building is a priority because it has been labeled \"Destroyed,\" indicating immediate risk to potential trapped occupants who may require urgent extraction.",
-  "medical_115": "This building is a priority because it has been classified as \"Destroyed,\" indicating the highest urgency for potential trapped occupants needing immediate extraction.",
-  "medical_132": "This building is a priority for immediate response due to its \"Destroyed\" status, indicating potential trapped occupants needing urgent extraction.",
-  "medical_142": "This building is a priority for the responder due to its \"Destroyed\" status, indicating potential occupants may be trapped and need immediate extraction.",
-  "machinery_20": "With a machinery priority score of 14, this building is a clear priority for deployment, as it is situated within a denser cluster of adjacent damage, maximizing the impact of a crane or excavator.",
-  "machinery_24": "This building, with a machinery priority score of 14, should be prioritized for crane deployment as it is part of a denser cluster of damage, allowing for more efficient support of multiple sites.",
-  "machinery_9": "This building, with a machinery priority score of 12, should be prioritized for a crane deployment as it is located in a densely packed area of damage, allowing for efficient clearing of multiple sites.",
-  "machinery_26": "This building is a moderate priority because its damage level and score of 12 indicate it is situated in a cluster, making it worthwhile to deploy resources here for more efficient site clearing.",
-  "machinery_27": "This building is a moderate priority for deployment, as its machinery priority score of 12 indicates it can help clear a few nearby sites but isn't at the center of a high-density cluster."
+  "medical_93": "This building is a priority for immediate response due to its \"Destroyed\" status, indicating possible trapped occupants needing urgent extraction.",
+  "medical_94": "This building is a priority for immediate response due to its \"Destroyed\" status, indicating a high likelihood of trapped occupants needing urgent extraction.",
+  "medical_115": "This building is a priority for the responder due to its \"Destroyed\" damage level, indicating a potential need for immediate extraction of occupants. The USGS ShakeMap indicates an MMI of 7.5, which diverges from the expected shaking-intensity pattern for a \"Destroyed\" building.",
+  "medical_132": "This building is a priority for the responder due to its \"Destroyed\" status, indicating a possible urgent need for occupant extraction.",
+  "medical_142": "This building is a priority due to its \"Destroyed\" status, indicating potential trapped occupants requiring immediate extraction.",
+  "machinery_20": "With a machinery priority score of 14, this building would be a solid priority, as it contributes to the clearing of multiple nearby sites.",
+  "machinery_24": "With a machinery priority score of 14, this building is part of a dense cluster of damage and should be prioritized for a crane deployment to maximize efficiency in clearing multiple sites.",
+  "machinery_9": "This building, with a machinery priority score of 12, indicates it’s situated in a denser cluster of damage, making it a good candidate for deployment.",
+  "machinery_26": "This building, with a machinery priority score of 12, is a reasonable choice for deployment as it is situated within a denser cluster of damage, allowing for the potential to clear multiple sites with one operation.",
+  "machinery_27": "With a machinery priority score of 12, this building is a sensible choice for deployment, as its proximity to other damaged sites means one crane can efficiently clear multiple locations."
 }
