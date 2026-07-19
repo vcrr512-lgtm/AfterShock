@@ -5,7 +5,8 @@
     "lon": -67.08355866523489,
     "damage": "Possibly damaged",
     "medical_score": 1,
-    "machinery_score": 1
+    "machinery_score": 1,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 1,
@@ -13,7 +14,8 @@
     "lon": -67.0790124706875,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 2,
@@ -21,7 +23,8 @@
     "lon": -67.050669150295,
     "damage": "Possibly damaged",
     "medical_score": 1,
-    "machinery_score": 1
+    "machinery_score": 1,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 3,
@@ -29,7 +32,8 @@
     "lon": -67.04044211873786,
     "damage": "Possibly damaged",
     "medical_score": 1,
-    "machinery_score": 1
+    "machinery_score": 1,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 4,
@@ -37,7 +41,8 @@
     "lon": -67.03246361000001,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 5,
@@ -45,7 +50,8 @@
     "lon": -67.03119532849999,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 8
+    "machinery_score": 8,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 6,
@@ -53,7 +59,8 @@
     "lon": -67.03598448273728,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 7,
@@ -61,7 +68,8 @@
     "lon": -67.03000936444444,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 8
+    "machinery_score": 8,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 8,
@@ -69,7 +77,8 @@
     "lon": -67.03037675636364,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 10
+    "machinery_score": 10,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 9,
@@ -77,7 +86,8 @@
     "lon": -67.02951927652174,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 12
+    "machinery_score": 12,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 10,
@@ -85,7 +95,8 @@
     "lon": -67.01998838335038,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 11,
@@ -93,7 +104,8 @@
     "lon": -67.02516804428572,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 12,
@@ -101,7 +113,8 @@
     "lon": -67.02666569533334,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 6
+    "machinery_score": 6,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 13,
@@ -109,7 +122,8 @@
     "lon": -67.0244288472,
     "damage": "Possibly damaged",
     "medical_score": 1,
-    "machinery_score": 1
+    "machinery_score": 1,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 14,
@@ -117,7 +131,8 @@
     "lon": -67.02592061,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 6
+    "machinery_score": 6,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 15,
@@ -125,7 +140,8 @@
     "lon": -67.02274030149425,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 16,
@@ -133,7 +149,8 @@
     "lon": -67.02664012333334,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 8
+    "machinery_score": 8,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 17,
@@ -141,7 +158,8 @@
     "lon": -67.02775086,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 8
+    "machinery_score": 8,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 18,
@@ -149,7 +167,8 @@
     "lon": -67.0203681198751,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 19,
@@ -157,7 +176,8 @@
     "lon": -67.02149627704546,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 6
+    "machinery_score": 6,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 20,
@@ -165,7 +185,8 @@
     "lon": -67.030110646,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 14
+    "machinery_score": 14,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 21,
@@ -173,7 +194,8 @@
     "lon": -67.03168801115385,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 22,
@@ -181,7 +203,8 @@
     "lon": -67.028634656875,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 10
+    "machinery_score": 10,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 23,
@@ -189,7 +212,8 @@
     "lon": -67.03388306727273,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 24,
@@ -197,7 +221,8 @@
     "lon": -67.02896722888889,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 14
+    "machinery_score": 14,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 25,
@@ -205,7 +230,8 @@
     "lon": -67.030784653,
     "damage": "Possibly damaged",
     "medical_score": 1,
-    "machinery_score": 8
+    "machinery_score": 8,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 26,
@@ -213,7 +239,8 @@
     "lon": -67.029458654,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 12
+    "machinery_score": 12,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 27,
@@ -221,7 +248,8 @@
     "lon": -67.0309509154054,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 12
+    "machinery_score": 12,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 28,
@@ -229,7 +257,8 @@
     "lon": -67.0299002909091,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 12
+    "machinery_score": 12,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 29,
@@ -237,7 +266,8 @@
     "lon": -67.03048237833333,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 10
+    "machinery_score": 10,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 30,
@@ -245,7 +275,8 @@
     "lon": -67.03599266944444,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 31,
@@ -253,7 +284,8 @@
     "lon": -67.03213728749999,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 6
+    "machinery_score": 6,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 32,
@@ -261,7 +293,8 @@
     "lon": -67.0348830284235,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 33,
@@ -269,7 +302,8 @@
     "lon": -67.03313448211765,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 6
+    "machinery_score": 6,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 34,
@@ -277,7 +311,8 @@
     "lon": -67.03103998142856,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 8
+    "machinery_score": 8,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 35,
@@ -285,7 +320,8 @@
     "lon": -67.03009590454545,
     "damage": "Possibly damaged",
     "medical_score": 1,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 36,
@@ -293,7 +329,8 @@
     "lon": -67.02861496232258,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 37,
@@ -301,7 +338,8 @@
     "lon": -67.032364653125,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 38,
@@ -309,7 +347,8 @@
     "lon": -67.03443701038655,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 39,
@@ -317,7 +356,8 @@
     "lon": -67.03000628545455,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 6
+    "machinery_score": 6,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 40,
@@ -325,7 +365,8 @@
     "lon": -67.02343160202703,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 41,
@@ -333,7 +374,8 @@
     "lon": -67.025545583,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 42,
@@ -341,7 +383,8 @@
     "lon": -67.02112542914634,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 8
+    "machinery_score": 8,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 43,
@@ -349,7 +392,8 @@
     "lon": -67.02160794764706,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 8
+    "machinery_score": 8,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 44,
@@ -357,7 +401,8 @@
     "lon": -67.019009784,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 45,
@@ -365,7 +410,8 @@
     "lon": -67.01691168709677,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 6
+    "machinery_score": 6,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 46,
@@ -373,7 +419,8 @@
     "lon": -67.02010646177966,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 6
+    "machinery_score": 6,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 47,
@@ -381,7 +428,8 @@
     "lon": -67.01585228675,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 48,
@@ -389,7 +437,8 @@
     "lon": -67.0187448811111,
     "damage": "Possibly damaged",
     "medical_score": 1,
-    "machinery_score": 5
+    "machinery_score": 5,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 49,
@@ -397,7 +446,8 @@
     "lon": -67.01762891153847,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 6
+    "machinery_score": 6,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 50,
@@ -405,7 +455,8 @@
     "lon": -67.01462223,
     "damage": "Possibly damaged",
     "medical_score": 1,
-    "machinery_score": 3
+    "machinery_score": 3,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 51,
@@ -413,7 +464,8 @@
     "lon": -67.01396881,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 52,
@@ -421,7 +473,8 @@
     "lon": -67.00800280220237,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 53,
@@ -429,7 +482,8 @@
     "lon": -67.00163105149572,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 54,
@@ -437,7 +491,8 @@
     "lon": -67.00091241954546,
     "damage": "Possibly damaged",
     "medical_score": 1,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 55,
@@ -445,7 +500,8 @@
     "lon": -66.9986873646643,
     "damage": "Possibly damaged",
     "medical_score": 1,
-    "machinery_score": 1
+    "machinery_score": 1,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 56,
@@ -453,7 +509,8 @@
     "lon": -67.01411440407408,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 10
+    "machinery_score": 10,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 57,
@@ -461,7 +518,8 @@
     "lon": -67.013041838,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 6
+    "machinery_score": 6,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 58,
@@ -469,7 +527,8 @@
     "lon": -67.01158199333334,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 6
+    "machinery_score": 6,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 59,
@@ -477,7 +536,8 @@
     "lon": -67.010352078,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 8
+    "machinery_score": 8,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 60,
@@ -485,7 +545,8 @@
     "lon": -67.02287456234568,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 61,
@@ -493,7 +554,8 @@
     "lon": -67.02577978308756,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 6
+    "machinery_score": 6,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 62,
@@ -501,7 +563,8 @@
     "lon": -67.0235399399115,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 6
+    "machinery_score": 6,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 63,
@@ -509,7 +572,8 @@
     "lon": -67.02475446565892,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 6
+    "machinery_score": 6,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 64,
@@ -517,7 +581,8 @@
     "lon": -67.02125024032787,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 65,
@@ -525,7 +590,8 @@
     "lon": -67.02704386155155,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 6
+    "machinery_score": 6,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 66,
@@ -533,7 +599,8 @@
     "lon": -67.02009235777777,
     "damage": "Possibly damaged",
     "medical_score": 1,
-    "machinery_score": 3
+    "machinery_score": 3,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 67,
@@ -541,7 +608,8 @@
     "lon": -67.01913274,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 68,
@@ -549,7 +617,8 @@
     "lon": -67.01760054571429,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 6
+    "machinery_score": 6,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 69,
@@ -557,7 +626,8 @@
     "lon": -67.01596222857142,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 70,
@@ -565,7 +635,8 @@
     "lon": -67.02935383857142,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 6
+    "machinery_score": 6,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 71,
@@ -573,7 +644,8 @@
     "lon": -67.03126915,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 72,
@@ -581,7 +653,8 @@
     "lon": -67.0286722890909,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 6
+    "machinery_score": 6,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 73,
@@ -589,7 +662,8 @@
     "lon": -67.02810981428571,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 6
+    "machinery_score": 6,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 74,
@@ -597,7 +671,8 @@
     "lon": -67.0144296540583,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 6
+    "machinery_score": 6,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 75,
@@ -605,7 +680,8 @@
     "lon": -67.01019844836956,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 6
+    "machinery_score": 6,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 76,
@@ -613,7 +689,8 @@
     "lon": -66.99137693567033,
     "damage": "Possibly damaged",
     "medical_score": 1,
-    "machinery_score": 1
+    "machinery_score": 1,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 77,
@@ -621,7 +698,8 @@
     "lon": -67.00617450611111,
     "damage": "Possibly damaged",
     "medical_score": 1,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 78,
@@ -629,7 +707,8 @@
     "lon": -67.01733644578947,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 79,
@@ -637,7 +716,8 @@
     "lon": -67.02103362942042,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 80,
@@ -645,7 +725,8 @@
     "lon": -67.02221540393259,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 81,
@@ -653,7 +734,8 @@
     "lon": -67.01833572097924,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 82,
@@ -661,7 +743,8 @@
     "lon": -66.92961641173292,
     "damage": "Possibly damaged",
     "medical_score": 1,
-    "machinery_score": 1
+    "machinery_score": 1,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 83,
@@ -669,7 +752,8 @@
     "lon": -66.93431937101694,
     "damage": "Possibly damaged",
     "medical_score": 1,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 84,
@@ -677,7 +761,8 @@
     "lon": -66.93484122430435,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 85,
@@ -685,7 +770,8 @@
     "lon": -66.91408852594697,
     "damage": "Possibly damaged",
     "medical_score": 1,
-    "machinery_score": 1
+    "machinery_score": 1,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 86,
@@ -693,7 +779,8 @@
     "lon": -66.9332701838889,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 87,
@@ -701,7 +788,8 @@
     "lon": -66.93436195754717,
     "damage": "Possibly damaged",
     "medical_score": 1,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 88,
@@ -709,7 +797,8 @@
     "lon": -66.9320921798077,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 89,
@@ -717,7 +806,8 @@
     "lon": -66.9221401887143,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 90,
@@ -725,7 +815,8 @@
     "lon": -66.9012405575,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 91,
@@ -733,7 +824,8 @@
     "lon": -66.97882112438239,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 92,
@@ -741,7 +833,8 @@
     "lon": -66.89588671529411,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 93,
@@ -749,7 +842,8 @@
     "lon": -66.8973675125,
     "damage": "Destroyed",
     "medical_score": 3,
-    "machinery_score": 6
+    "machinery_score": 6,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 94,
@@ -757,7 +851,8 @@
     "lon": -66.89867328666666,
     "damage": "Destroyed",
     "medical_score": 3,
-    "machinery_score": 9
+    "machinery_score": 9,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 95,
@@ -765,7 +860,8 @@
     "lon": -66.89959835027027,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 96,
@@ -773,7 +869,8 @@
     "lon": -66.89566414333333,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 97,
@@ -781,7 +878,8 @@
     "lon": -66.89171304300751,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 98,
@@ -789,7 +887,8 @@
     "lon": -66.89196641351352,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 99,
@@ -797,7 +896,8 @@
     "lon": -66.8517720160164,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 100,
@@ -805,7 +905,8 @@
     "lon": -66.88812140087121,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 101,
@@ -813,7 +914,8 @@
     "lon": -66.87171342775244,
     "damage": "Possibly damaged",
     "medical_score": 1,
-    "machinery_score": 1
+    "machinery_score": 1,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 102,
@@ -821,7 +923,8 @@
     "lon": -66.84336408355263,
     "damage": "Possibly damaged",
     "medical_score": 1,
-    "machinery_score": 1
+    "machinery_score": 1,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 103,
@@ -829,7 +932,8 @@
     "lon": -66.840295549375,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 104,
@@ -837,7 +941,8 @@
     "lon": -66.83669971769633,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 105,
@@ -845,7 +950,8 @@
     "lon": -66.8243563998305,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 106,
@@ -853,7 +959,8 @@
     "lon": -66.82772126195123,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 107,
@@ -861,7 +968,8 @@
     "lon": -66.84658064333334,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 108,
@@ -869,7 +977,8 @@
     "lon": -66.83687010145833,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 109,
@@ -877,7 +986,8 @@
     "lon": -66.83963670468749,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 110,
@@ -885,7 +995,8 @@
     "lon": -66.83207921263158,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 111,
@@ -893,7 +1004,8 @@
     "lon": -66.8272925567658,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 112,
@@ -901,7 +1013,8 @@
     "lon": -67.009877484,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 8
+    "machinery_score": 8,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 113,
@@ -909,7 +1022,8 @@
     "lon": -67.0159401011111,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 114,
@@ -917,7 +1031,8 @@
     "lon": -67.01360289380952,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 10
+    "machinery_score": 10,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 115,
@@ -925,7 +1040,8 @@
     "lon": -67.01441043095238,
     "damage": "Destroyed",
     "medical_score": 3,
-    "machinery_score": 12
+    "machinery_score": 12,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 116,
@@ -933,7 +1049,8 @@
     "lon": -67.01139310032787,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 8
+    "machinery_score": 8,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 117,
@@ -941,7 +1058,8 @@
     "lon": -66.98619988211009,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 118,
@@ -949,7 +1067,8 @@
     "lon": -67.0061719804,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 119,
@@ -957,7 +1076,8 @@
     "lon": -67.009151284,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 6
+    "machinery_score": 6,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 120,
@@ -965,7 +1085,8 @@
     "lon": -67.01328281735293,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 6
+    "machinery_score": 6,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 121,
@@ -973,7 +1094,8 @@
     "lon": -67.01167495,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 7.5
   },
   {
     "id": 122,
@@ -981,7 +1103,8 @@
     "lon": -66.82205069,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 123,
@@ -989,7 +1112,8 @@
     "lon": -66.82944574727273,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 124,
@@ -997,7 +1121,8 @@
     "lon": -66.82729378636363,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 125,
@@ -1005,7 +1130,8 @@
     "lon": -66.82008250418458,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 126,
@@ -1013,7 +1139,8 @@
     "lon": -66.84482426534883,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 127,
@@ -1021,7 +1148,8 @@
     "lon": -66.8341799631746,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 128,
@@ -1029,7 +1157,8 @@
     "lon": -66.82466006727273,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 129,
@@ -1037,7 +1166,8 @@
     "lon": -66.83939433798001,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 130,
@@ -1045,7 +1175,8 @@
     "lon": -66.8377313408,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 131,
@@ -1053,7 +1184,8 @@
     "lon": -66.83640864298077,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 132,
@@ -1061,7 +1193,8 @@
     "lon": -66.88505397142856,
     "damage": "Destroyed",
     "medical_score": 3,
-    "machinery_score": 3
+    "machinery_score": 3,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 133,
@@ -1069,7 +1202,8 @@
     "lon": -66.84988489,
     "damage": "Possibly damaged",
     "medical_score": 1,
-    "machinery_score": 1
+    "machinery_score": 1,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 134,
@@ -1077,7 +1211,8 @@
     "lon": -66.84900915074074,
     "damage": "Possibly damaged",
     "medical_score": 1,
-    "machinery_score": 1
+    "machinery_score": 1,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 135,
@@ -1085,7 +1220,8 @@
     "lon": -66.86077633,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 136,
@@ -1093,7 +1229,8 @@
     "lon": -66.85850257294118,
     "damage": "Possibly damaged",
     "medical_score": 1,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 137,
@@ -1101,7 +1238,8 @@
     "lon": -66.85767796,
     "damage": "Possibly damaged",
     "medical_score": 1,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 138,
@@ -1109,7 +1247,8 @@
     "lon": -66.85931699654762,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 139,
@@ -1117,7 +1256,8 @@
     "lon": -66.85360796365384,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 140,
@@ -1125,7 +1265,8 @@
     "lon": -66.85756150857142,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 141,
@@ -1133,7 +1274,8 @@
     "lon": -66.84838312833334,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 6
+    "machinery_score": 6,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 142,
@@ -1141,7 +1283,8 @@
     "lon": -66.83890919227272,
     "damage": "Destroyed",
     "medical_score": 3,
-    "machinery_score": 6
+    "machinery_score": 6,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 143,
@@ -1149,7 +1292,8 @@
     "lon": -66.84421429197184,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 144,
@@ -1157,7 +1301,8 @@
     "lon": -66.837810166,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 6
+    "machinery_score": 6,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 145,
@@ -1165,7 +1310,8 @@
     "lon": -66.84042306454545,
     "damage": "Destroyed",
     "medical_score": 3,
-    "machinery_score": 3
+    "machinery_score": 3,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 146,
@@ -1173,7 +1319,8 @@
     "lon": -66.83705003910653,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 147,
@@ -1181,7 +1328,8 @@
     "lon": -66.84666710399999,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 148,
@@ -1189,7 +1337,8 @@
     "lon": -66.84273860652173,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 149,
@@ -1197,7 +1346,8 @@
     "lon": -66.844938664,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 150,
@@ -1205,7 +1355,8 @@
     "lon": -66.84627419818183,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 151,
@@ -1213,7 +1364,8 @@
     "lon": -66.84675992099068,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 152,
@@ -1221,7 +1373,8 @@
     "lon": -66.8473539613402,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 8
+    "machinery_score": 8,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 153,
@@ -1229,7 +1382,8 @@
     "lon": -66.84840636181819,
     "damage": "Possibly damaged",
     "medical_score": 1,
-    "machinery_score": 5
+    "machinery_score": 5,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 154,
@@ -1237,7 +1391,8 @@
     "lon": -66.85421626,
     "damage": "Possibly damaged",
     "medical_score": 1,
-    "machinery_score": 3
+    "machinery_score": 3,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 155,
@@ -1245,7 +1400,8 @@
     "lon": -66.85646213888889,
     "damage": "Possibly damaged",
     "medical_score": 1,
-    "machinery_score": 2
+    "machinery_score": 2,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 156,
@@ -1253,7 +1409,8 @@
     "lon": -66.84947349,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 8
+    "machinery_score": 8,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 157,
@@ -1261,7 +1418,8 @@
     "lon": -66.85074444333334,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 6
+    "machinery_score": 6,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 158,
@@ -1269,7 +1427,8 @@
     "lon": -66.84835332076923,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 12
+    "machinery_score": 12,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 159,
@@ -1277,7 +1436,8 @@
     "lon": -66.85434701199999,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 4
+    "machinery_score": 4,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 160,
@@ -1285,7 +1445,8 @@
     "lon": -66.85435146059072,
     "damage": "Destroyed",
     "medical_score": 3,
-    "machinery_score": 6
+    "machinery_score": 6,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 161,
@@ -1293,7 +1454,8 @@
     "lon": -66.84961921357143,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 10
+    "machinery_score": 10,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 162,
@@ -1301,7 +1463,8 @@
     "lon": -66.84787401999999,
     "damage": "Destroyed",
     "medical_score": 3,
-    "machinery_score": 9
+    "machinery_score": 9,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 163,
@@ -1309,7 +1472,8 @@
     "lon": -66.85117064162162,
     "damage": "Destroyed",
     "medical_score": 3,
-    "machinery_score": 3
+    "machinery_score": 3,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 164,
@@ -1317,7 +1481,8 @@
     "lon": -66.84911322956522,
     "damage": "Destroyed",
     "medical_score": 3,
-    "machinery_score": 6
+    "machinery_score": 6,
+    "shakemap_mmi_min": 8.0
   },
   {
     "id": 165,
@@ -1325,6 +1490,7 @@
     "lon": -66.84746697125,
     "damage": "Damaged",
     "medical_score": 2,
-    "machinery_score": 6
+    "machinery_score": 6,
+    "shakemap_mmi_min": 8.0
   }
 ]
