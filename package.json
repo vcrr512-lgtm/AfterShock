@@ -1,0 +1,13 @@
+{
+  "name": "soggydoritos",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "generate-explanations": "node --env-file=.env scripts/generateExplanations.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.112.3",
+    "openai": "^6.48.0"
+  }
+}
