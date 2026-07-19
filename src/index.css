@@ -23,6 +23,8 @@
   --accent-amber: #f97316;
   --accent-red: #ef4444;
   --accent-yellow: #eab308;
+  --accent-violet: #a78bfa;
+  --accent-violet-dim: rgba(167, 139, 250, 0.35);
 
   --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
   --sans: Inter, ui-sans-serif, system-ui, sans-serif;
@@ -118,31 +120,50 @@ html.is-spatial {
 .stat-card.severity-damaged .stat-value { color: var(--accent-amber); }
 .stat-card.severity-possible .stat-value { color: var(--accent-yellow); }
 
-/* ── Three-column main layout ────────────────────────────────────────────── */
+/* ── Main grid — six panels as DIRECT children, positioned by line ──────────
+   No wrapper divs between the panels and this grid. Each panel gets its
+   position via grid-column/grid-row on its own class, so there's no nested
+   flex layout for WebSpatial to resolve before it can size the panel. ──── */
 
 .dashboard-main {
-  display: flex;
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr) 300px;
+  grid-template-rows: repeat(3, minmax(160px, auto));
   gap: 1.25rem;
-  align-items: flex-start;
-  flex: 1;
 }
 
-.dashboard-sidebar {
+.toggle-panel {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+}
+
+.ranked-panel {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: start;
+}
+
+.buildings-panel {
+  grid-column: 2;
+  grid-row: 1 / span 3;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  flex: 0 0 300px;
-  min-width: 260px;
 }
 
-.dashboard-center {
-  flex: 1 1 auto;
-  min-width: 0;
-  display: flex;
+.detail-panel {
+  grid-column: 3;
+  grid-row: 1;
+  align-self: start;
 }
 
-.dashboard-center .buildings-panel {
-  width: 100%;
+.detail-panel.dispatch-status-panel {
+  grid-row: 2;
+}
+
+.detail-panel.about-panel {
+  grid-row: 3;
 }
 
 /* ── Shared panel base ────────────────────────────────────────────────────── */
@@ -176,15 +197,20 @@ html.is-spatial {
   box-shadow: 0 0 12px 1px var(--accent-cyan-dim);
 }
 
-.toggle-panel {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-}
-
 .ranked-panel::before,
 .buildings-panel::before {
   background: linear-gradient(90deg, var(--accent-red), var(--accent-amber), var(--accent-yellow));
+}
+
+.coordinator-panel::before {
+  background: var(--accent-violet);
+  box-shadow: 0 0 12px 1px var(--accent-violet-dim);
+}
+
+.coordinator-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
 .detail-panel::before {
@@ -280,9 +306,6 @@ html.is-spatial {
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
-  max-height: 460px;
-  overflow-y: auto;
-  padding-right: 2px;
 }
 
 .ranked-row {
@@ -349,13 +372,6 @@ html.is-spatial {
 .ranked-status-cleared { color: #4ade80; }
 
 /* ── Hero map panel ───────────────────────────────────────────────────────── */
-
-.buildings-panel {
-  padding: 0;
-  height: min(76vh, 760px);
-  display: flex;
-  flex-direction: column;
-}
 
 .scene-shell {
   flex: 1;
@@ -426,7 +442,7 @@ html.is-spatial {
   display: inline-block;
 }
 
-/* ── Detail / dispatch-status / about panels (right sidebar) ─────────────── */
+/* ── Detail / dispatch-status / about panels (right column) ──────────────── */
 
 .detail-panel {
   padding: 1.5rem;
@@ -608,17 +624,16 @@ html.is-spatial {
 
 @media (max-width: 1100px) {
   .dashboard-main {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, auto);
   }
 
-  .dashboard-sidebar {
-    flex: 1 1 auto;
-    width: 100%;
-  }
-
-  .buildings-panel {
-    height: 50vh;
-  }
+  .toggle-panel { grid-column: 1; grid-row: 1; }
+  .ranked-panel { grid-column: 1; grid-row: 2; }
+  .buildings-panel { grid-column: 1; grid-row: 3; height: 50vh; }
+  .detail-panel { grid-column: 1; grid-row: 4; }
+  .detail-panel.dispatch-status-panel { grid-row: 5; }
+  .detail-panel.about-panel { grid-row: 6; }
 
   .stats-row {
     grid-template-columns: repeat(2, 1fr);
