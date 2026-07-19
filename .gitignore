@@ -1,17 +1,17 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment variables (contains API keys — never commit)
 .env
 .env.local
 .env.*.local
-*.key
-*api_key*
 
-.DS_Store
-Thumbs.db
-
+# Editor
 .vscode/
 .idea/
-*.swp
 
-dist/
-build/
-out/
-*.log
+# OS
+.DS_Store
