@@ -10,8 +10,11 @@
  */
 
 import buildingsData from "./data/buildings_scored.json";
+import explanationsData from "./data/explanations.json";
 import { useEffect, useMemo, useState } from "react";
+import { Canvas } from "@react-three/fiber";
 import { Spatialized2DElementContainer } from "@webspatial/react-sdk";
+import SceneMarkers, { toSceneCoords } from "./SceneMarkers";
 import { getRanked } from "./lib/ranking.js";
 
 const HISTORY_WINDOW_NAME = "damage-detail";
@@ -63,6 +66,34 @@ export default function VoicePage() {
 
   const selectedBuilding = sortedBuildings.find((building) => building.id === selectedId) ?? null;
   const topScore = sortedBuildings[0]?.[activeScoreKey] ?? 0;
+  const explanationKey = selectedBuilding ? `${activeView}_${selectedBuilding.id}` : null;
+  const explanation = explanationKey
+    ? (explanationsData[explanationKey as keyof typeof explanationsData] as string | undefined)
+    : undefined;
+
+  const sceneView = useMemo(() => {
+    if (!sortedBuildings.length) {
+      return { x: 0, z: 0, distance: 120 };
+    }
+
+    const coords = sortedBuildings.map((building) => toSceneCoords(building.lat, building.lon));
+    const xs = coords.map((coordinate) => coordinate.x);
+    const zs = coords.map((coordinate) => coordinate.z);
+    const minX = Math.min(...xs);
+    const maxX = Math.max(...xs);
+    const minZ = Math.min(...zs);
+    const maxZ = Math.max(...zs);
+    const centerX = (minX + maxX) / 2;
+    const centerZ = (minZ + maxZ) / 2;
+    const span = Math.max(maxX - minX, maxZ - minZ);
+    const distance = Math.max(90, span * 0.9 + 50);
+
+    return { x: centerX, z: centerZ, distance };
+  }, [sortedBuildings]);
+
+  const cameraPosition = useMemo(() => {
+    return [sceneView.x, sceneView.distance * 0.85, sceneView.z + sceneView.distance * 0.95] as const;
+  }, [sceneView]);
 
   return (
     <div className="dashboard-root">
@@ -110,28 +141,20 @@ export default function VoicePage() {
             <p>{sortedBuildings.length} scored buildings • {activeCategory} focus</p>
           </div>
 
-          <div className="damage-grid">
-            {sortedBuildings.map((building) => {
-              const score = building[activeScoreKey];
-              const isTop = score === topScore;
-              const isSelected = selectedId === building.id;
-              return (
-                <button
-                  key={building.id}
-                  type="button"
-                  className={`dot-card${isSelected ? " selected" : ""}${isTop ? " top-ranked" : ""}`}
-                  style={{
-                    backgroundColor: getScoreColor(building, activeView),
-                    borderColor: isTop ? "#facc15" : "transparent",
-                  }}
-                  onClick={() => setSelectedId(building.id)}
-                >
-                  <div className="dot-card-label">ID {building.id}</div>
-                  <div className="dot-card-damage">{building.damage}</div>
-                  <div className="dot-card-score">{`Score ${score}`}</div>
-                </button>
-              );
-            })}
+          <div className="scene-shell" style={{ width: "100%", height: 320, minHeight: 320, display: "block" }}>
+            <Canvas
+              camera={{ position: cameraPosition, fov: 45 }}
+              onCreated={({ camera }) => camera.lookAt(sceneView.x, 0, sceneView.z)}
+            >
+              <ambientLight intensity={0.6} />
+              <directionalLight position={[10, 20, 10]} intensity={0.9} />
+              <SceneMarkers
+                buildings={sortedBuildings}
+                selectedId={selectedId}
+                onSelect={(building: any) => setSelectedId(building.id)}
+                getColor={(building: any) => getScoreColor(building, activeView)}
+              />
+            </Canvas>
           </div>
         </Spatialized2DElementContainer>
 
@@ -156,6 +179,14 @@ export default function VoicePage() {
               <div className="detail-row">
                 <strong>Lat / Lon:</strong> {selectedBuilding.lat.toFixed(6)}, {selectedBuilding.lon.toFixed(6)}
               </div>
+              {explanation ? (
+                <div className="detail-row">
+                  <strong>Reasoning:</strong>
+                  <p className="detail-text">{explanation}</p>
+                </div>
+              ) : (
+                <p className="detail-text">Select a building to view its actual score and damage grade.</p>
+              )}
             </>
           ) : (
             <p className="detail-text">Select a building to view its actual score and damage grade.</p>
